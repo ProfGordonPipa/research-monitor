@@ -1,0 +1,1185 @@
+[
+  {
+    "id": "2610.00616",
+    "title": "Stochastic Dynamics of Large-Scale Motif-Embedded Spiking Neuronal Networks",
+    "abstract": "We examine how local motif structure and global network topology jointly shape spiking dynamics in stochastic neuronal networks. Using networks of Izhikevich neurons with Erd\u0151s-R\u00e9nyi (ER) and scale-free (SF) background connectivity, we compare motif-embedded networks with synapse-count-matched, non-motif controls under noise- and stimulus-driven protocols. Motif embedding increases noise-induced coherence in both topologies and provides a smaller improvement in signal transmission, while SF-based networks attain greater absolute coherence and transmit signals faster and more reliably than ER-based networks. Motif-rewiring experiments show that this benefit depends on the specific arrangement of intra-motif connections rather than on strong local connectivity alone: randomizing the motif skeleton reduces coherence overall, although rewiring the non-recurrent feed-forward loop and bi-parallel motif can increase it. Targeted ablation shows that the SF advantage depends in part on hub integrity; removing high-degree excitatory neurons impairs coherence and signal transmission more than matched random node or edge removal. Together, these results indicate that local motifs and global hubs make distinct, complementary contributions to coherent spiking dynamics.",
+    "authors": [],
+    "source": "arXiv:q-bio.NC",
+    "url": "https://arxiv.org/abs/2610.00616",
+    "relevance": {
+      "relevance_score": 5,
+      "matching_topics": {
+        "Network Topology": 2,
+        "Criticality": 1
+      },
+      "keyword_matches": [
+        "spiking",
+        "recurrent"
+      ]
+    },
+    "novelty": [
+      "Provides experimental/empirical evidence",
+      "Works with spiking neural networks",
+      "Focuses on recurrent network architecture"
+    ],
+    "connection_to_your_work": [
+      "Relates to network topology extraction work"
+    ],
+    "potential_benefit": [
+      "Explore for potential cross-disciplinary applications"
+    ],
+    "key_insights": [
+      "Presents experimental/computational results",
+      "Demonstrates specific phenomena or capabilities",
+      "Suggests new theoretical directions",
+      "Focuses on network-level dynamics"
+    ]
+  },
+  {
+    "id": "2610.00597",
+    "title": "Stochastic dynamics and synchronization in motif-based neuronal networks",
+    "abstract": "Neuronal networks exhibit complex dynamics shaped by connectivity and stochastic input. Empirical studies show that neuronal networks contain recurring subgraphs, or motifs, but the collective influence of different motif types after embedding in large stochastic networks remains less well understood. We construct a spiking network composed of six representative structural classes and examine how intrinsic noise, coupling strength, inter-motif connectivity, network size, and neuronal heterogeneity shape synchronization. Both motif- and network-level coherence peak at intermediate noise intensities, consistent with coherence resonance. Bidirectionally coupled pairs (M2) and the type-2 recurrent feed-forward loop (M3c) consistently exhibit high motif-level coherence. Rewiring these motifs while preserving local synapse number and strength produces some of the largest reductions in network coherence, showing that connection arrangement contributes beyond strong local coupling alone. M2 and M3c also exhibit frequent spike doublets, linking short inter-spike intervals with elevated coherence. Relative to a degree- and weight-matched random control, the motif-structured network reaches greater coherence at weaker noise. Increasing network size enhances coherence until the response begins to saturate, whereas applied-current heterogeneity lowers peak coherence and shifts the optimum toward stronger noise without erasing the relative differences among motif classes. These results show that local connection arrangement remains dynamically consequential after embedding and can shape noise-driven coherence at the population level.",
+    "authors": [],
+    "source": "arXiv:q-bio.NC",
+    "url": "https://arxiv.org/abs/2610.00597",
+    "relevance": {
+      "relevance_score": 4,
+      "matching_topics": {
+        "Cross-Frequency": 1,
+        "Network Topology": 1
+      },
+      "keyword_matches": [
+        "spiking",
+        "recurrent"
+      ]
+    },
+    "novelty": [
+      "Provides experimental/empirical evidence",
+      "Works with spiking neural networks",
+      "Focuses on recurrent network architecture"
+    ],
+    "connection_to_your_work": [
+      "Indirectly related \u2014 explore for cross-disciplinary insights"
+    ],
+    "potential_benefit": [
+      "Explore for potential cross-disciplinary applications"
+    ],
+    "key_insights": [
+      "Presents experimental/computational results",
+      "Demonstrates specific phenomena or capabilities",
+      "Focuses on network-level dynamics"
+    ]
+  },
+  {
+    "id": "2610.01086",
+    "title": "Multi-Scale Temporal Flows for Peptide Trajectory Generation",
+    "abstract": "Peptides occupy a particularly challenging regime of biomolecular dynamics. Short peptides lack a stable folded core and populate broad conformational ensembles, while cyclization adds ring closure, non-local residue coupling, and stereochemical diversity. Deep generative models have made remarkable progress in emulating molecular-dynamics trajectories directly, yet each is trained on windows cut at a fixed interval and therefore observes the process at a fixed temporal resolution. More fundamentally, none takes that interval as an input, so the physical time a window spans is never represented, leaving the sparse frames on which a peptide crosses between metastable states difficult to learn. Here, we introduce PepTIDE, a multi-scale temporal framework for peptide trajectory generation. The stride of each training window is drawn from a continuous range, so one model observes the same dynamics at many temporal resolutions, and an Adaptive Physical-Time Embedding encodes the relative interval of a window together with the absolute time of each frame, making the shared velocity field interval-aware. All frames are generated jointly through a stochastic-interpolant flow, and pair-aware invariant point attention captures the geometry and topology of both linear and cyclic peptides. On PepMD and a 50-system cyclic-peptide benchmark, PepTIDE reaches state-of-the-art distribution agreement and structural validity. Read in temporal order, its trajectories recover these sparse transition frames and reproduce inter-state fluxes more faithfully, confirming that modeling multiple temporal scales is what makes these rare events accessible.",
+    "authors": [],
+    "source": "arXiv:q-bio.QM",
+    "url": "https://arxiv.org/abs/2610.01086",
+    "relevance": {
+      "relevance_score": 4,
+      "matching_topics": {
+        "Cross-Frequency": 2,
+        "Fading Memory": 1,
+        "Network Topology": 1
+      },
+      "keyword_matches": []
+    },
+    "novelty": [
+      "General theoretical or empirical work"
+    ],
+    "connection_to_your_work": [
+      "Relevant to fading memory and temporal processing work",
+      "Relates to network topology extraction work"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks",
+      "Could reveal new dynamical principles in recurrent networks",
+      "May extend your fading memory analysis to new regimes"
+    ],
+    "key_insights": [
+      "Focuses on network-level dynamics"
+    ]
+  },
+  {
+    "id": "2610.00149",
+    "title": "Per-Node Activation Function Evolution in Indirectly Encoded Substrates: Solvability, Limits, and Emergent Diversity",
+    "abstract": "Biological neurons achieve computational diversity through specialized types: tonic, bursting, adapting, and fast-spiking cells coexist within the same circuit. Artificial neural networks, by contrast, apply a single activation function uniformly to all nodes, which limits what they can represent. We show that this uniformity creates hard limits for evolutionary search: across sparse evolved substrates, monotonic functions fail to solve parity beyond its smallest instance, XOR, while a single oscillatory unit suffices at all tested scales. The gap is one of search and sparsity, not representation: monotonic networks can represent parity with a modest number of hidden units, and gradient descent recovers that solution. We evolve, to our knowledge for the first time in indirect encoding, per-node activation function assignments from an 18-function palette across more than 4,500 experimental runs spanning Boolean logic, regression, and spatial classification. Testing each of the 18 functions individually on Parity-4 reveals a three-tier solvability structure: oscillatory functions achieve 100%, intermediate functions 6.7-80%, and all 9 monotonic functions 0%. This divide is not universal. Recurrence collapses it, and gradient descent inverts it entirely, showing that the barrier is specific to evolutionary search in sparse substrates. What activation functions a network can use, beyond its topology and weights, determines what evolutionary search can solve. Indirect encoding discovers heterogeneous per-node activation assignments unlikely to be chosen by hand.",
+    "authors": [],
+    "source": "arXiv:cs.NE",
+    "url": "https://arxiv.org/abs/2610.00149",
+    "relevance": {
+      "relevance_score": 3,
+      "matching_topics": {
+        "Network Topology": 2
+      },
+      "keyword_matches": [
+        "spiking"
+      ]
+    },
+    "novelty": [
+      "Claims novelty",
+      "Provides experimental/empirical evidence",
+      "Works with spiking neural networks"
+    ],
+    "connection_to_your_work": [
+      "Relates to network topology extraction work"
+    ],
+    "potential_benefit": [
+      "Explore for potential cross-disciplinary applications"
+    ],
+    "key_insights": [
+      "Demonstrates specific phenomena or capabilities",
+      "Focuses on network-level dynamics",
+      "Has biological/neural implications"
+    ]
+  },
+  {
+    "id": "2610.02129",
+    "title": "Spiking neural networks for streaming qubit readout",
+    "abstract": "Fast and accurate qubit-state assignment is essential for feedback, calibration, and error correction in quantum processors. In superconducting platforms, frequency-multiplexed readout makes this task intrinsically multivariate as measured traces can encode crosstalk, qubit-state relaxation events, and other transient nonidealities that are not fully captured by conventional matched filtering. Here, we introduce spiking neural network (SNN) discriminators for superconducting qubit readout. By processing the measurement window in successive time chunks, the networks exploit temporal structure and update classification scores as data arrive, rather than waiting until the end of the readout window. The spiking networks outperform matched-filter discrimination and approach the accuracy of a full-trace artificial neural network. Beyond reaching the performance of artificial neural networks, the key advantage of SNNs is that they provide a streaming, time-resolved estimate of the qubit state that evolves as the readout signal is acquired. Using quantisation-aware training and hls4ml synthesis, we further demonstrate that each FPGA inference update can be completed before the next readout chunk arrives. These results establish spiking neural networks as a promising route to low-latency, real-time qubit readout on FPGA hardware, with broader implications for time-critical quantum-control and scientific-inference applications.",
+    "authors": [],
+    "source": "arXiv:cs.NE",
+    "url": "https://arxiv.org/abs/2610.02129",
+    "relevance": {
+      "relevance_score": 3,
+      "matching_topics": {
+        "Fading Memory": 1,
+        "Network Topology": 1
+      },
+      "keyword_matches": [
+        "spiking"
+      ]
+    },
+    "novelty": [
+      "Provides experimental/empirical evidence",
+      "Works with spiking neural networks"
+    ],
+    "connection_to_your_work": [
+      "Relevant to fading memory and temporal processing work"
+    ],
+    "potential_benefit": [
+      "May extend your fading memory analysis to new regimes"
+    ],
+    "key_insights": [
+      "Presents experimental/computational results",
+      "Demonstrates specific phenomena or capabilities",
+      "Introduces new methodological approach",
+      "Discusses broader implications",
+      "Focuses on network-level dynamics",
+      "Has biological/neural implications"
+    ]
+  },
+  {
+    "id": "2610.02195",
+    "title": "Cost-augmented Schr\u00f6dinger bridges on graphs are exactly solvable: a Feynman-Kac tilt replaces learned control",
+    "abstract": "The generalized Schr\u00f6dinger bridge on a graph moves mass between two distributions while charging a cost for the states visited. It has been approached by learning the rates of a controlled continuous-time Markov chain, with a temporal-difference penalty that restores the cost. A state cost folds into the reference process as a Feynman-Kac tilt. The cost-augmented bridge is then a plain bridge against the tilted reference, and the penalty is unnecessary. The bridge is computed exactly by alternating two endpoint rescalings, each one sparse matrix-exponential application; nothing is discretized in time or learned. The alternation converges at a rate set by the endpoint coupling alone. For a quadratic congestion cost on time-averaged occupancies, damped best response around the exact bridge is gradient descent on a strongly convex function, and its residual bounds its error. On a protein-folding model, a free-energy cost lowers the expected barrier of the folding paths. On the learned approach&#39;s road network, roll-outs of the exact bridge match the target within sampling error, and on networks with millions of intersections its memory grows linearly.",
+    "authors": [],
+    "source": "arXiv:cs.LG",
+    "url": "https://arxiv.org/abs/2610.02195",
+    "relevance": {
+      "relevance_score": 3,
+      "matching_topics": {
+        "Cross-Frequency": 1,
+        "Fading Memory": 2
+      },
+      "keyword_matches": []
+    },
+    "novelty": [
+      "Extends existing framework"
+    ],
+    "connection_to_your_work": [
+      "Relevant to fading memory and temporal processing work"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks",
+      "May extend your fading memory analysis to new regimes"
+    ],
+    "key_insights": [
+      "Introduces new methodological approach",
+      "Focuses on network-level dynamics"
+    ]
+  },
+  {
+    "id": "2610.01303",
+    "title": "A High-Density EEG Dataset for Stimulus-Driven Auditory Attention",
+    "abstract": "Stimulus-driven auditory attention determines which sound gains priority when multiple sources compete without an explicit listening goal, yet most computational studies focus either on acoustic salience or on decoding predefined attended targets. This study investigates instruction-free auditory competition using the Stimulus-driven Auditory Attention (SAAD) paradigm and develops a neurophysiologically informed framework that integrates stimulus-derived sound priority with trial-specific EEG evidence. Behavioral analysis using a Bradley--Terry model showed that sound priority estimated from previous competitions generalized to unseen sound pairings, improving held-out prediction from an AUC of 0.577 to 0.718. EEG analysis further revealed mid-to-late centro-temporal lateralization associated with the reported selection side, with neural information remaining predictive beyond acoustic asymmetry. Guided by these findings, the proposed model first estimates a latent priority for each competing sound and forms relative stimulus evidence from their difference. A multi-scale EEG pathway with complementary signed and power-based readouts then extracts trial-specific neural evidence, which is incorporated through gated decision-level integration. The framework is evaluated using mirror-constrained and pairing-held-out protocols, together with representative acoustic, EEG, multimodal baselines, and systematic ablations. The results support a computational account in which spontaneous auditory selection reflects the interaction between generalizable stimulus priority and trial-specific neural variability.",
+    "authors": [],
+    "source": "arXiv:q-bio.NC",
+    "url": "https://arxiv.org/abs/2610.01303",
+    "relevance": {
+      "relevance_score": 2,
+      "matching_topics": {
+        "Cross-Frequency": 1,
+        "Fading Memory": 1
+      },
+      "keyword_matches": []
+    },
+    "novelty": [
+      "Claims novelty",
+      "Proposes new method/approach",
+      "Provides experimental/empirical evidence",
+      "Extends existing framework"
+    ],
+    "connection_to_your_work": [
+      "Relevant to fading memory and temporal processing work",
+      "Relates to predictive coding and temporal prediction"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks",
+      "May extend your fading memory analysis to new regimes"
+    ],
+    "key_insights": [
+      "Presents experimental/computational results",
+      "Demonstrates specific phenomena or capabilities",
+      "Has biological/neural implications"
+    ]
+  },
+  {
+    "id": "2610.01558",
+    "title": "Controllable Stochastic Quantization Encoding for Adversarially Robust Spiking Neural Networks",
+    "abstract": "Spiking Neural Networks (SNNs) have attracted increasing attention due to their impressive temporal dynamics, energy efficiency, and brain-inspired mechanisms. Although SNNs have demonstrated promising performance in image classification tasks, recent studies have shown that they remain vulnerable to adversarial attacks, where imperceptible perturbations are added to input images to mislead model predictions. Existing defense methods mainly focus on training strategies, while the role of input encoding remains less explored. An observation is that the robustness advantage of Poisson encoding over direct encoding may benefit from its inherent randomness. Motivated by this, we propose a stochastic quantization encoding method that encodes the input image with controllable randomness adjusted by the quantization scale, thereby improving the adversarial robustness of SNNs. We further show that this method constitutes a general framework that reduces to both Poisson encoding and direct encoding under different choices of the quantization scale. Since it enhances robustness at the input encoding stage, it can be combined with existing training-based defenses for further gains. Experimental results on CIFAR-10 and CIFAR-100 demonstrate the effectiveness of the proposed stochastic quantization encoding method. To sum up, this work highlights the importance of input encoding for the adversarial robustness of SNNs, providing a new perspective for understanding and improving it.",
+    "authors": [],
+    "source": "arXiv:cs.NE",
+    "url": "https://arxiv.org/abs/2610.01558",
+    "relevance": {
+      "relevance_score": 2,
+      "matching_topics": {
+        "Fading Memory": 1
+      },
+      "keyword_matches": [
+        "spiking"
+      ]
+    },
+    "novelty": [
+      "Claims novelty",
+      "Proposes new method/approach",
+      "Provides experimental/empirical evidence",
+      "Works with spiking neural networks"
+    ],
+    "connection_to_your_work": [
+      "Relevant to fading memory and temporal processing work",
+      "Relates to predictive coding and temporal prediction"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks",
+      "May extend your fading memory analysis to new regimes"
+    ],
+    "key_insights": [
+      "Presents experimental/computational results",
+      "Demonstrates specific phenomena or capabilities",
+      "Introduces new methodological approach",
+      "Focuses on network-level dynamics",
+      "Has biological/neural implications"
+    ]
+  },
+  {
+    "id": "2610.00719",
+    "title": "Neuromorphic Pseudo-Random Number Generators with a Low Power Hardware Implementation",
+    "abstract": "Pseudo-random number generation often requires trade-offs among quality, power consumption, and bandwidth to produce unpredictable sequences of numbers. The brain, on the other hand, efficiently generates unpredictable output complex network dynamics occurring in a high-dimensional state. This state, which is hypothesized to be chaotic, relies on the balance between excitation and inhibition. Here, we investigated if computational models of these chaotic balanced states can be harnessed for Neuromorphic Pseudo-Random Number Generators (NPRNGs) in low power hardware. We successfully constructed a balanced spiking neural network model consisting of leaky-integrate-and-fire neurons that could be readily implemented in low power FPGAs and used as a NPRNG. The prototyped NPRNG consumed 3.24 mW during operation and produced pseudo-random numbers at 120kbps. In both hardware and software instantiations, NPRNGs produce high-quality random numbers as validated by standard metrics for testing RNG quality.",
+    "authors": [],
+    "source": "arXiv:cs.NE",
+    "url": "https://arxiv.org/abs/2610.00719",
+    "relevance": {
+      "relevance_score": 2,
+      "matching_topics": {},
+      "keyword_matches": [
+        "spiking",
+        "neuromorphic"
+      ]
+    },
+    "novelty": [
+      "Works with spiking neural networks"
+    ],
+    "connection_to_your_work": [
+      "Indirectly related \u2014 explore for cross-disciplinary insights"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks",
+      "Could reveal new dynamical principles in recurrent networks"
+    ],
+    "key_insights": [
+      "Focuses on network-level dynamics",
+      "Has biological/neural implications"
+    ]
+  },
+  {
+    "id": "2610.02186",
+    "title": "Higher-Order Molecular Grammars for Generative and Foundation Models in Chemistry",
+    "abstract": "Molecular learning models are strongly shaped by their underlying representations. Yet standard sequential and graph formalisms struggle to explicitly encode higher-order topology, such as ring systems and recurring motifs. Existing higher-order representations can capture these structures directly, but they are often computationally demanding and difficult to decode into valid molecules. Here, we introduce Higher-order Grammar Representation (HGR), a principled, topology-aware framework that lifts molecules to combinatorial complexes and parses each complex into a compact sequence of production rules under a context-free higher-order grammar. By serialising higher-order topology into rule sequences, HGR makes these structures directly compatible with standard sequence models, avoiding the computational overhead of explicit higher-order encodings while preserving topological expressiveness. To reduce benchmark bias towards simple ring systems, we construct RingDiv, a ring-enriched benchmark containing 1.18 million molecules, including the curated RingDiv300k subset, and introduce the ring diversity index (RDI) to quantify ring-system coverage. In molecular generation, HGR-based models uniquely combine 100% validity by construction with leading distributional alignment, ranking first in FCD on all five generation benchmarks. In representation learning, HGR-FM achieves the highest mean AUC across seven MoleculeNet benchmarks under both transfer protocols, improving on the strongest baseline by 8.3 and 3.3 AUC points under probing and full fine-tuning, respectively. Collectively, these results establish HGR as an efficient higher-order representation for molecular generation and transferable representation learning.",
+    "authors": [],
+    "source": "arXiv:cs.LG",
+    "url": "https://arxiv.org/abs/2610.02186",
+    "relevance": {
+      "relevance_score": 2,
+      "matching_topics": {
+        "Network Topology": 2
+      },
+      "keyword_matches": []
+    },
+    "novelty": [
+      "Claims novelty"
+    ],
+    "connection_to_your_work": [
+      "Relates to network topology extraction work"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks"
+    ],
+    "key_insights": [
+      "Presents experimental/computational results"
+    ]
+  },
+  {
+    "id": "2610.02185",
+    "title": "Decoding Looped Transformers Better for (Almost) Free",
+    "abstract": "Looped Transformers achieve parameter efficiency by repeatedly executing a shared block across recurrent loops. Each loop yields an intermediate representation decodable for the same next token, yet standard decoding discards earlier states. Because earlier loops embody less computation, recurrence inherently supplies aligned weak-and-strong prediction pairs without auxiliary models or external training. We introduce LoopCD, a training-free contrastive decoding framework that guides token selection by contrasting the final prediction with an earlier recurrent pass, operating either in logit space with one extra output pass (LoopCD-Logits) or in hidden-state space with zero output overhead (LoopCD-Hidden). Across four looped Transformer families, LoopCD delivers substantial, consistent gains at full recurrent depth: LoopCD-Logits raises Ouro-2.6B-Thinking&#39;s AIME 2024 pass@1 from 61.88% to 73.33%, while LoopCD-Hidden lifts Huginn&#39;s HumanEval pass@1 from 22.56% to 31.71%. Crucially, these performance gains enable halving the number of recurrent loops while still matching or exceeding full-depth unguided baselines, reducing forward FLOPs by 22.5% to 48.2%. By transforming intermediate recurrent states into effective guidance signals, LoopCD achieves superior decoding quality while substantially reducing inference compute.",
+    "authors": [],
+    "source": "arXiv:cs.LG",
+    "url": "https://arxiv.org/abs/2610.02185",
+    "relevance": {
+      "relevance_score": 2,
+      "matching_topics": {},
+      "keyword_matches": [
+        "recurrent",
+        "state space"
+      ]
+    },
+    "novelty": [
+      "Focuses on recurrent network architecture"
+    ],
+    "connection_to_your_work": [
+      "Relates to predictive coding and temporal prediction"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks"
+    ],
+    "key_insights": [
+      "Focuses on network-level dynamics"
+    ]
+  },
+  {
+    "id": "2610.00884",
+    "title": "Efficient Convex Optimization Methods for State-Space Heartbeat Dynamics Models with Gamma Generalized Linear Models",
+    "abstract": "Objective: This work proposes a dynamic state-space statistical model of heartbeat dynamics whose optimal state estimate can be solved efficiently with convex optimization and used to assess autonomic and cardiovascular health. Methods: This state-space model combines a Gauss-Markov process prior with gamma emissions using a log-link function. Parameters are estimated using a static version of the model, and alternating direction method of multipliers is used to efficiently find the optimal maximum a priori latent state estimate. Model selection is performed by finding the tradeoff between model size and model fit using the partial autocorrelation function. Results: We demonstrate in synthetically generated heartbeats that this model is able to closely recover the underlying latent weights. Then, we show using a tilt table dataset that this statistical model is able to better capture sharp transients in heart rate patterns than traditional local averaging methods. In addition, combining heart beat timings with information from other organs such as the respiratory phase, we show that our statistical modeling framework enables the extraction of information-theoretic measures to quantify inter-organ coupling such as respiratory sinus arrythmia. Conclusion: This statistical framework for modeling heartbeat dynamics provides an efficient framework that can provide physiologically meaningful insights. Significance: This work broadens potential tools that can be used to assess heartbeat dynamics.",
+    "authors": [],
+    "source": "arXiv:q-bio.QM",
+    "url": "https://arxiv.org/abs/2610.00884",
+    "relevance": {
+      "relevance_score": 2,
+      "matching_topics": {
+        "Neural Synchrony": 1,
+        "Cross-Frequency": 1
+      },
+      "keyword_matches": []
+    },
+    "novelty": [
+      "Provides experimental/empirical evidence",
+      "Investigates synchrony/oscillations"
+    ],
+    "connection_to_your_work": [
+      "Related to neural synchrony and gamma oscillation research"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks",
+      "Could reveal new dynamical principles in recurrent networks"
+    ],
+    "key_insights": [
+      "Presents experimental/computational results",
+      "Demonstrates specific phenomena or capabilities",
+      "Introduces new methodological approach",
+      "Focuses on network-level dynamics"
+    ]
+  },
+  {
+    "id": "2607.26297",
+    "title": "Three Failures of Pain Location: Why Its Diagnostic Utility Is Three Quantities, Not One",
+    "abstract": "Patient-reported pain location is diagnostically decisive for some presentations and nearly uninformative for others. The prevailing account treats this as one gradient of diagnostic utility set by anatomical complexity. That explanation conflates three epistemically distinct failures, each with its own mathematics, its own optimal instrument, and its own public-health consequence. In anatomical multiplexing, many structures share one location: a non-identifiable inverse problem. In delocalized amplification - clinically, central sensitization or nociplastic pain - a centrally driven pain-behaviour pattern replaces the peripheral generator: a change of generative model. In referred and atypical displacement, location is hypothesized to shift in a systematic, person-dependent way: a group-conditional bias whose direct evidence is still open. The three are one Bayesian inference problem failing at different nodes - the likelihood, the model class, and the group-conditional prior - with a fourth node at the report itself. The formal development is in a companion paper; this paper states what each model shows and what follows clinically. Re-examination finds that the published &#34;high-utility&#34; accuracy band leans on overstated specificity (Lipton et al., 2003; Bruyninckx et al., 2008; Devill\u00e9 et al., 2000), so the gradient is real but flatter than drawn. The well-evidenced finding that better detection alone does not improve outcomes when treatment uptake lags is about the care pathway, not perception - a distinction the three-way split makes visible and a single utility number hides. The paper organizes the failures along a why-location-fails axis, distinct from the nociceptive/neuropathic/nociplastic taxonomy (Kosek et al., 2016), and sets out the study that would test the one prediction still open.",
+    "authors": [],
+    "source": "arXiv:q-bio.NC",
+    "url": "https://arxiv.org/abs/2607.26297",
+    "relevance": {
+      "relevance_score": 1,
+      "matching_topics": {
+        "Network Topology": 1
+      },
+      "keyword_matches": []
+    },
+    "novelty": [
+      "Provides experimental/empirical evidence"
+    ],
+    "connection_to_your_work": [
+      "Relates to predictive coding and temporal prediction"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks"
+    ],
+    "key_insights": [
+      "Demonstrates specific phenomena or capabilities"
+    ]
+  },
+  {
+    "id": "2607.26297v2",
+    "title": "Three Failures of Pain Location: Why Its Diagnostic Utility Is Three Quantities, Not One",
+    "abstract": "Patient-reported pain location is diagnostically decisive for some presentations and nearly uninformative for others. The prevailing account treats this as one gradient of diagnostic utility set by anatomical complexity. That explanation conflates three epistemically distinct failures, each with its own mathematics, its own optimal instrument, and its own public-health consequence. In anatomical multiplexing, many structures share one location: a non-identifiable inverse problem. In delocalized amplification - clinically, central sensitization or nociplastic pain - a centrally driven pain-behaviour pattern replaces the peripheral generator: a change of generative model. In referred and atypical displacement, location is hypothesized to shift in a systematic, person-dependent way: a group-conditional bias whose direct evidence is still open. The three are one Bayesian inference problem failing at different nodes - the likelihood, the model class, and the group-conditional prior - with a fourth node at the report itself. The formal development is in a companion paper; this paper states what each model shows and what follows clinically. Re-examination finds that the published &#34;high-utility&#34; accuracy band leans on overstated specificity (Lipton et al., 2003; Bruyninckx et al., 2008; Devill\u00e9 et al., 2000), so the gradient is real but flatter than drawn. The well-evidenced finding that better detection alone does not improve outcomes when treatment uptake lags is about the care pathway, not perception - a distinction the three-way split makes visible and a single utility number hides. The paper organizes the failures along a why-location-fails axis, distinct from the nociceptive/neuropathic/nociplastic taxonomy (Kosek et al., 2016), and sets out the study that would test the one prediction still open.",
+    "authors": [],
+    "source": "arXiv:q-bio.NC",
+    "url": "https://arxiv.org/abs/2607.26297v2",
+    "relevance": {
+      "relevance_score": 1,
+      "matching_topics": {
+        "Network Topology": 1
+      },
+      "keyword_matches": []
+    },
+    "novelty": [
+      "Provides experimental/empirical evidence"
+    ],
+    "connection_to_your_work": [
+      "Relates to predictive coding and temporal prediction"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks"
+    ],
+    "key_insights": [
+      "Demonstrates specific phenomena or capabilities"
+    ]
+  },
+  {
+    "id": "2610.00690",
+    "title": "Synaptic placement reflects shared input in Drosophila descending neurons",
+    "abstract": "Network topology describes connections between neurons, whereas synaptic placement specifies how those connections are arranged within individual cells. How these levels of organization correspond remains incompletely understood. Here we show that connectivity between presynaptic neurons is reflected in relative input placement within Drosophila descending neurons (DNs). Across thousands of one-way DN connections in the independently reconstructed MaleCNS and FlyWire brains, inputs from sources also contacting the partner DN lay on average 9.4 and 8.0 {\\mu}m nearer that partner&#39;s inputs along the receiver&#39;s neurites than other non-DN inputs. The same ordering held when source-input positions were fixed and partners with and without recorded source input were compared after standardizing reference-set size. In BANC and MaleCNS, shared input and measured spatial overlap provided complementary predictive information about DN interconnection. Two interconnected DNs sharing an ascending source differed in their identified cord outputs. Together, these findings link a three-neuron topological relationship to relative input placement, revealing a correspondence between network connectivity and the internal spatial organization of a receiving neuron.",
+    "authors": [],
+    "source": "arXiv:q-bio.NC",
+    "url": "https://arxiv.org/abs/2610.00690",
+    "relevance": {
+      "relevance_score": 1,
+      "matching_topics": {
+        "Network Topology": 1
+      },
+      "keyword_matches": []
+    },
+    "novelty": [
+      "Provides experimental/empirical evidence",
+      "Examines plasticity/homeostasis mechanisms"
+    ],
+    "connection_to_your_work": [
+      "Relates to network topology extraction work",
+      "Relates to predictive coding and temporal prediction"
+    ],
+    "potential_benefit": [
+      "Explore for potential cross-disciplinary applications"
+    ],
+    "key_insights": [
+      "Demonstrates specific phenomena or capabilities",
+      "Focuses on network-level dynamics",
+      "Has biological/neural implications"
+    ]
+  },
+  {
+    "id": "2610.01894",
+    "title": "A foundation for systematic analysis of transformers and RNNs for tractography",
+    "abstract": "Machine learning (ML) has emerged as a promising approach for improving diffusion MRI (dMRI) tractography, a task that remains limited by the intrinsic tension between local diffusion information and global anatomical plausibility. In this work, we systematically evaluate recurrent neural networks (RNNs) and Transformer models for iterative tractography, with particular attention to training strategies, input representations (including convolutional neural network (CNN)-based embeddings and end-of-sequence (EOS) tokens), and hyperparameter selection. We introduce a generation-validation phase enabling supervision at the streamline level during training, allowing supervision despite the mismatch between local loss functions and global streamline quality. Using the ISMRM2015 tractography challenge dataset, our models achieve the highest reported performance to date. Through controlled experiments, we quantify the impact of missing bundles, noisy or imperfect training streamlines, and invalid fibers in the training set. Finally, we demonstrate the applicability of our best-performing models for in vivo data from the Tractoinferno database. Overall, our results highlight both the potential and the limits of sequence-based deep learning models such as Transformers and RNNs for tractography, and emphasize the need for improved phantoms and evaluation methods for in vivo validation. We provide takeaways and recommendations for future researchers training and validating sequence-based supervised methods for tractography.",
+    "authors": [],
+    "source": "arXiv:q-bio.NC",
+    "url": "https://arxiv.org/abs/2610.01894",
+    "relevance": {
+      "relevance_score": 1,
+      "matching_topics": {},
+      "keyword_matches": [
+        "recurrent"
+      ]
+    },
+    "novelty": [
+      "Provides experimental/empirical evidence",
+      "Challenges existing assumptions",
+      "Focuses on recurrent network architecture"
+    ],
+    "connection_to_your_work": [
+      "Addresses information processing in recurrent networks"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks"
+    ],
+    "key_insights": [
+      "Presents experimental/computational results",
+      "Demonstrates specific phenomena or capabilities",
+      "Introduces new methodological approach",
+      "Focuses on network-level dynamics",
+      "Has biological/neural implications"
+    ]
+  },
+  {
+    "id": "2610.01887",
+    "title": "TRACE: Tackling Real-World Resource Assignment Problems via Agentic Heuristic Design",
+    "abstract": "Dynamic resource assignment, the real-time allocation of task streams to heterogeneous processing nodes, is the backbone of modern computing infrastructure. While learning-based schedulers excel in research, industrial deployments still rely on hand-written rules that operators can read, audit, and execute within tight latency budgets. LLM-based Automatic Heuristic Design (AHD) promises to automate writing such rules. However, existing AHD frameworks were developed for combinatorial problems fully specified to the LLM, and they learn only from a scalar fitness score. In real systems, the behaviour that determines a good heuristic, such as processor speeds or power consumption, is unknown a priori: the score reveals which heuristic performs better, but not why. This missing information is recorded in the system logs that every evaluation produces. Exploiting it is non-trivial: logs are massive and noisy, the relevant signals depend on the objective, and their content and format vary across hardware and software stacks, so they can neither be fed to an LLM as is nor processed by a fixed parser. We propose TRACE, which couples an evolutionary AHD loop with an agentic knowledge-extraction workflow. A Reasoner agent analyzes the log schema in light of the objective and formulates hypotheses about the system dynamics; a Coder agent writes and executes schema-specific code to test them, producing insights or executable tools for the evolved heuristics. We evaluate TRACE on a synthetic cloud benchmark and a 5G vRAN scenario built from industrial testbed measurements and operational traffic traces. TRACE consistently outperforms state-of-the-art AHD methods in resource assignment problems and yields more auditable heuristics at under 2% overhead.",
+    "authors": [],
+    "source": "arXiv:cs.NE",
+    "url": "https://arxiv.org/abs/2610.01887",
+    "relevance": {
+      "relevance_score": 1,
+      "matching_topics": {
+        "Network Topology": 1
+      },
+      "keyword_matches": []
+    },
+    "novelty": [
+      "General theoretical or empirical work"
+    ],
+    "connection_to_your_work": [
+      "Indirectly related \u2014 explore for cross-disciplinary insights"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks",
+      "May offer new perspectives on information flow measurement",
+      "Could reveal new dynamical principles in recurrent networks"
+    ],
+    "key_insights": [
+      "Introduces new methodological approach",
+      "Focuses on network-level dynamics"
+    ]
+  },
+  {
+    "id": "2610.01583",
+    "title": "Continual Reinforcement Learning with Neuroevolution",
+    "abstract": "Despite many studies about causes and remedies of plasticity loss in Reinforcement Learning (RL) under continual task changes, no RL method has yet consistently achieved a good balance between adaptation and forgetting. Here we turn to an alternative optimization paradigm, neuroevolution (NE): algorithms that search directly in weight space through mutation and selection over a population of neural networks. Across a wide array of environments and environmental changes, with policies ranging from a few hundred parameters to million-parameter networks, we compare evolution strategies (ES) and genetic algorithms (GAs) against state-of-the-art continual RL variants and population-based RL. ES most consistently achieves a good stability-plasticity trade-off, while the GA is the most plastic method but forgets more than ES. To explain this, we study the return landscape around each method&#39;s solutions. ES finds the widest neighborhoods, i.e.\\ regions of weight space in which perturbed policies still solve the task, and the size of the overlap between the neighborhoods of consecutive tasks correlates with a method&#39;s stability-plasticity trade-off. Rewarding behavioral diversity in a GA through novelty search makes the population even more plastic, at the cost of forgetting. Finally, symptoms of plasticity loss commonly reported in RL do not transfer to NE. Overall, these results establish NE as a competitive alternative to RL under continual task changes, and suggest that training under perturbations in weight space may be a useful mechanism for continual learning more broadly.",
+    "authors": [],
+    "source": "arXiv:cs.NE",
+    "url": "https://arxiv.org/abs/2610.01583",
+    "relevance": {
+      "relevance_score": 1,
+      "matching_topics": {},
+      "keyword_matches": [
+        "plasticity"
+      ]
+    },
+    "novelty": [
+      "Claims novelty",
+      "Examines plasticity/homeostasis mechanisms"
+    ],
+    "connection_to_your_work": [
+      "Directly relates to SORN (self-organizing recurrent network) framework"
+    ],
+    "potential_benefit": [
+      "Explore for potential cross-disciplinary applications"
+    ],
+    "key_insights": [
+      "Presents experimental/computational results",
+      "Suggests new theoretical directions",
+      "Introduces new methodological approach",
+      "Focuses on network-level dynamics",
+      "Has biological/neural implications"
+    ]
+  },
+  {
+    "id": "2610.01232",
+    "title": "Inherited Learning in an Artificial Ecology: How Controls and Update Allocation Shape Benefits",
+    "abstract": "Learning can improve an individual&#39;s behavior, yet a population risks losing that experience whenever individuals die and are replaced. Inheriting learned preferences offers a way to preserve useful behavior across generations, raising a question for artificial populations: when does inheritance improve collective performance, and how can its benefits be measured fairly? The challenge is that inheritance changes not only offspring behavior but also survival, reproduction, and opportunities for further hereditary updates. Random controls with equal update magnitudes may therefore yield misleading comparisons if they alter different states or obey different stability constraints. We investigate this problem in a resource-limited artificial ecology, combining structured random controls with interventions on newborn preferences and the allocation of hereditary updates. Preserving the state structure of random updates substantially narrows the apparent inheritance advantage, while a conditional establishment-speed benefit remains. Preference erasure and faster-learning compensation support a contribution from reduced offspring relearning. Update allocation also changes the comparison: event quotas and common time cutoffs can reverse rankings, although they also change realized update amounts. With update count and cumulative magnitudes matched, staged release improves occupancy but does not achieve the prespecified establishment criterion. These findings provide a framework for distinguishing the value of inherited preferences from the effects of control design and update allocation, clarifying how inherited learning should be evaluated in artificial populations.",
+    "authors": [],
+    "source": "arXiv:cs.NE",
+    "url": "https://arxiv.org/abs/2610.01232",
+    "relevance": {
+      "relevance_score": 1,
+      "matching_topics": {
+        "Network Topology": 1
+      },
+      "keyword_matches": []
+    },
+    "novelty": [
+      "Claims novelty",
+      "Challenges existing assumptions"
+    ],
+    "connection_to_your_work": [
+      "Indirectly related \u2014 explore for cross-disciplinary insights"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks"
+    ],
+    "key_insights": [
+      "Theoretical or computational analysis"
+    ]
+  },
+  {
+    "id": "2610.00148",
+    "title": "Multi-Behavioral Evolved Substrates Through Neuromodulation and Activation Selection",
+    "abstract": "Open-ended artificial life systems must acquire diverse competencies from a single evolving genotype. Biological brains combine neuromodulation, which reconfigures circuits without changing connections, with diverse neuron types matched to specific computational roles. Can artificial evolution achieve something analogous in indirectly encoded substrates? Using indirectly encoded substrates evolved via CPPNs, we show through more than 10,000 experiments that neuromodulation alone is insufficient: under evolutionary search, monotonic activation functions impose a 75% ceiling on parity tasks that persists regardless of capacity, topology, or population size. This is an evolutionary search barrier, not a representational limit, since Adam gradient descent achieves 100% on the identical architecture. We combine neuromodulation with per-task activation function selection, matching oscillatory primitives to parity tasks and monotonic to threshold tasks, producing multi-behavioral evolved substrates. The result: 100% simultaneous 5-task success across all 30 seeds (median 14 generations). This generalizes across the oscillatory activation class: all four functions reach 100% (30 seeds each). Neither mechanism suffices alone. The barrier extends to higher-arity and asymmetric tasks, while multi-layer depth provides an alternative path. For open-ended evolution, the computational primitive should itself be an evolvable trait. At inference, one evolved genotype expresses many behaviors.",
+    "authors": [],
+    "source": "arXiv:cs.NE",
+    "url": "https://arxiv.org/abs/2610.00148",
+    "relevance": {
+      "relevance_score": 1,
+      "matching_topics": {
+        "Network Topology": 1
+      },
+      "keyword_matches": []
+    },
+    "novelty": [
+      "Provides experimental/empirical evidence",
+      "Extends existing framework"
+    ],
+    "connection_to_your_work": [
+      "Relates to network topology extraction work"
+    ],
+    "potential_benefit": [
+      "Explore for potential cross-disciplinary applications"
+    ],
+    "key_insights": [
+      "Presents experimental/computational results",
+      "Demonstrates specific phenomena or capabilities",
+      "Has biological/neural implications"
+    ]
+  },
+  {
+    "id": "2610.02199",
+    "title": "TACO: Ternary Absolute-max Column-wise One-sparse Optimizer for LLM Fine-Tuning",
+    "abstract": "Full-parameter fine-tuning of large language models (LLMs) incurs substantial optimizer state memory overhead, limiting the model sizes that fit on modern GPUs. Existing approaches either compress optimizer state, abandon first-order gradients, or change the update geometry while retaining dense state. The recently introduced Muon optimizer reduces optimizer memory through matrix-valued updates. Still, its geometry differs from AdamW and can lead to performance degradation when fine-tuning AdamW-pretrained models. To reduce optimizer memory without sacrificing accuracy or computational efficiency in LLM fine-tuning, we propose Ternary Absolute-max Column-wise One-sparse optimizer, or TACO, which follows Muon&#39;s operator-norm steepest-descent view but takes the geometric route further. TACO computes the exact steepest-descent direction under a dimension-normalized",
+    "authors": [],
+    "source": "arXiv:cs.LG",
+    "url": "https://arxiv.org/abs/2610.02199",
+    "relevance": {
+      "relevance_score": 1,
+      "matching_topics": {
+        "Fading Memory": 1
+      },
+      "keyword_matches": []
+    },
+    "novelty": [
+      "Claims novelty"
+    ],
+    "connection_to_your_work": [
+      "Relevant to fading memory and temporal processing work"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks",
+      "May extend your fading memory analysis to new regimes"
+    ],
+    "key_insights": [
+      "Introduces new methodological approach"
+    ]
+  },
+  {
+    "id": "2610.02189",
+    "title": "Generative modeling of intrinsically disordered protein regions by reinforcing sparse autoencoder features",
+    "abstract": "Intrinsically disordered protein regions (IDRs) play central roles in cellular processes such as transcriptional regulation, signal transduction, and subcellular localization, yet their functional design remains challenging. Structure-based design methods do not readily apply to IDRs, and existing protein language models are trained on full-length protein sequences, thus learning a prior that is biased towards folded domains. Here, we present IDiom, an autoregressive protein language model trained on IDiom-DB, a dataset of 54 million predicted IDRs curated from the AlphaFold Database. IDiom generates diverse sequences that recapitulate the composition, patterning, motifs, and predicted disorder of natural IDRs. To control function-associated sequence patterns, we also introduce reinforcement learning with sparse autoencoder features (RL-SAE), a post-training method that rewards the generation of sequences that activate specified feature sets. Across eight IDR design tasks, RL-SAE sequences activate, on average, 90% of 30 targeted features, compared to 24% for activation steering. We demonstrate that RL-SAE improves the predicted subcellular localization and transcriptional activity of generated IDRs compared to steering and supervised fine-tuning, and enables features associated with distinct biological functions to be combined within individual sequences. Thus, IDiom and RL-SAE enable interpretable and composable IDR design through explicit control of function-associated sequence features. More broadly, RL-SAE could extend to other protein design settings where interpretable features provide useful design targets. Code is available at this https URL .",
+    "authors": [],
+    "source": "arXiv:cs.LG",
+    "url": "https://arxiv.org/abs/2610.02189",
+    "relevance": {
+      "relevance_score": 1,
+      "matching_topics": {
+        "Network Topology": 1
+      },
+      "keyword_matches": []
+    },
+    "novelty": [
+      "Provides experimental/empirical evidence",
+      "Extends existing framework"
+    ],
+    "connection_to_your_work": [
+      "Indirectly related \u2014 explore for cross-disciplinary insights"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks",
+      "May inspire biologically plausible learning rules for your networks"
+    ],
+    "key_insights": [
+      "Demonstrates specific phenomena or capabilities",
+      "Introduces new methodological approach"
+    ]
+  },
+  {
+    "id": "2610.02182",
+    "title": "SoftServe: A Scalable Quasi-Newton Method for Deep Learning",
+    "abstract": "Quasi-Newton (QN) methods have long been among the most effective methods for large-scale unconstrained convex optimization. Two obstacles have limited their use in deep learning: non-convexity and enormous parameter sizes. We introduce SoftServe, a family of QN methods designed to overcome these obstacles without line searches or ad hoc curvature corrections. SoftServe derives positivedefinite curvature estimates from the variational objective of Berglund et al. (2025), even in the presence of negative curvature. We develop diagonal and Kroneckerfactored variants that preserve positive definiteness by construction and scale to massive neural networks. Finally, SoftServe relies on the stable coupled Newton-Schulz iteration for the required matrix operations, replacing costly matrix decompositions with GPU-friendly matrix multiplications. SoftServe excels on problems that are severely ill-conditioned, including tasks such as recurrent networks, deep autoencoders, physics-informed neural networks, and a 136M-parameter physics-informed diffusion model, often achieving lower losses than established baselines including Adam, Muon, and SOAP.",
+    "authors": [],
+    "source": "arXiv:cs.LG",
+    "url": "https://arxiv.org/abs/2610.02182",
+    "relevance": {
+      "relevance_score": 1,
+      "matching_topics": {},
+      "keyword_matches": [
+        "recurrent"
+      ]
+    },
+    "novelty": [
+      "Claims novelty",
+      "Focuses on recurrent network architecture"
+    ],
+    "connection_to_your_work": [
+      "Indirectly related \u2014 explore for cross-disciplinary insights"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks"
+    ],
+    "key_insights": [
+      "Introduces new methodological approach",
+      "Focuses on network-level dynamics",
+      "Has biological/neural implications"
+    ]
+  },
+  {
+    "id": "2610.00860",
+    "title": "MorphoBranch: A Fine-Structure-Preserving Workbench for Morphometric Analysis of Branched Cellular Structures",
+    "abstract": "Background and Objectives: Fluorescence-labeled cellular arbors provide readouts of neuronal and microglial morphology, but fine and weakly labeled processes are prone to fragmentation and false connections that bias skeleton-based measurements. We present MorphoBranch, a fine-structure-preserving, human-reviewable workbench for morphometry of branched cellular structures. Methods: MorphoBranch combines a deterministic Morphometry Engine with an LLM-assisted Refinement Engine. The Mor- phometry Engine implements an image-to-graph workflow integrating multiscale structural evidence extraction, hysteresis segmen- tation, evidence-constrained skeleton refinement, and graph-based morphometry. The Refinement Engine maps natural-language requests to registered actions for parameter adjustment, preview execution, metric reporting, and unsupported-request handling, while image processing and quantitative computation remain deterministic and reviewable. Results: MorphoBranch was evaluated on two public neuronal axon datasets, AxonMIP and AxonStack, and the in-house Cell- Morph dataset of microglial fluorescence images. It achieved the highest Skeleton F1 and clDice and the lowest length-estimation error among the evaluated methods on all three datasets, while also achieving the highest Dice and IoU on AxonMIP and Axon- Stack. Across 150 natural-language tasks, the Refinement Engine achieved a 94.0% end-to-end success rate. Conclusions: These results demonstrate that MorphoBranch provides a reproducible, human-reviewable workflow for mor- phometric analysis of branched cellular structures. It supports fine-structure-preserving quantification across neuronal axon and microglial fluorescence images while maintaining inspectable and reproducible analysis workflows.",
+    "authors": [],
+    "source": "arXiv:q-bio.QM",
+    "url": "https://arxiv.org/abs/2610.00860",
+    "relevance": {
+      "relevance_score": 1,
+      "matching_topics": {
+        "Network Topology": 1
+      },
+      "keyword_matches": []
+    },
+    "novelty": [
+      "Provides experimental/empirical evidence"
+    ],
+    "connection_to_your_work": [
+      "Indirectly related \u2014 explore for cross-disciplinary insights"
+    ],
+    "potential_benefit": [
+      "Explore for potential cross-disciplinary applications"
+    ],
+    "key_insights": [
+      "Presents experimental/computational results",
+      "Demonstrates specific phenomena or capabilities",
+      "Introduces new methodological approach"
+    ]
+  },
+  {
+    "id": "2610.00672",
+    "title": "ORBIT-FMIB: Tracking Order-Resolved Epistatic Information Through ESM-2",
+    "abstract": "Protein foundation models support mutation-effect and structural prediction, but predictive performance alone does not reveal which forms of biological interaction information remain accessible through model depth. We ask whether ESM-2 retains higher-order epistatic information as strongly as first- and second-order information across its representation hierarchy, introducing ORBIT-FMIB, a diagnostic framework combining Walsh-based interaction decomposition with subset-conditioned neural dependence estimation. The method is validated on synthetic landscapes with known interaction structure before being applied to the dense four-site GB1 fitness landscape using frozen ESM-2 representations. An initial production run suggested ESM-2 retains higher-order epistatic information less well than lower-order information (",
+    "authors": [],
+    "source": "arXiv:q-bio.QM",
+    "url": "https://arxiv.org/abs/2610.00672",
+    "relevance": {
+      "relevance_score": 1,
+      "matching_topics": {
+        "Network Topology": 1
+      },
+      "keyword_matches": []
+    },
+    "novelty": [
+      "Claims novelty"
+    ],
+    "connection_to_your_work": [
+      "Relates to predictive coding and temporal prediction"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks"
+    ],
+    "key_insights": [
+      "Suggests new theoretical directions",
+      "Introduces new methodological approach",
+      "Has biological/neural implications"
+    ]
+  },
+  {
+    "id": "2610.00665",
+    "title": "Analysis of Quantized and Efficiently Adapted Protein Language Models",
+    "abstract": "Background: Protein language models (PLMs) are increasingly used for sequence generation and property prediction, but their size makes fine-tuning and deployment expensive. The effects of quantization and parameter efficient fine-tuning on performance, representations and generation remain insufficiently characterized. Results: We evaluated 4-bit quantization and low-rank adapter fine-tuning (QLoRA) across ESM-2, ESMC, ProtBERT, ProtT5, Ankh, Ankh3 and Profluent-E1. Across protein prediction tasks, many model-task pairs retained more than 90% of full fine-tuning performance. Peak GPU memory savings approached 90% for the largest models, although performance and efficiency varied by model, dataset and training configuration. QLoRA often preserved early-layer representations while inducing task-specific adaptations in middle and late layers, resembling full fine-tuning with smaller representational changes. Training speed and power effects were more varied. For unconditional generation with ProLLaMA, ProtGPT2, ProGen2, ProteinGLM and ESM3, 4-bit quantization largely preserved predicted structural and sequence-level properties, but token-level analysis revealed model-dependent shifts in autoregressive output distributions. Conclusion: QLoRA and 4-bit quantization reduce PLM computational requirements, particularly GPU memory usage. Our results support QLoRA as a first-pass strategy for memory limited adaptation, reserving full fine-tuning for challenging tasks, unstable architectures or low validation recovery. For generative PLMs, sequence-level and structural metrics should be complemented with distributional analysis, since downstream predictions alone may miss quantization-induced shifts. These approaches can broaden access to large-scale protein modelling while requiring model- and task-specific validation.",
+    "authors": [],
+    "source": "arXiv:q-bio.QM",
+    "url": "https://arxiv.org/abs/2610.00665",
+    "relevance": {
+      "relevance_score": 1,
+      "matching_topics": {
+        "Fading Memory": 1
+      },
+      "keyword_matches": []
+    },
+    "novelty": [
+      "Claims novelty"
+    ],
+    "connection_to_your_work": [
+      "Relevant to fading memory and temporal processing work",
+      "Relates to predictive coding and temporal prediction"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks",
+      "May extend your fading memory analysis to new regimes"
+    ],
+    "key_insights": [
+      "Presents experimental/computational results",
+      "Introduces new methodological approach"
+    ]
+  },
+  {
+    "id": "2610.00602",
+    "title": "CPathOGen: Spatially and Morphologically Controlled H&amp;E Counterfactuals for Probing Pathology Models",
+    "abstract": "Computational pathology models infer biologically and clinically meaningful outcomes from histology, but their predictions are shaped by complex, intertwined tissue signals whose roles are important to understand. Common pixel- and feature-space perturbations can produce implausible tissue, making model responses difficult to interpret. We introduce CPathOGen, a conditional latent-diffusion framework for generating paired H\\&amp;E counterfactuals with explicit controls over cellular spatial organization, nuclear morphology, and stain appearance. Cellular maps condition spatial structure through a spatial encoder, while a morphology/appearance vector modulates denoising through blockwise feature-wise linear modulation (FiLM). On held-out H\\&amp;E tiles, CPathOGen generates visually plausible tissue with improved distributional agreement after spatially guided selection, as reflected by lower Fr\u00e9chet Inception Distance (FID) and Kernel Inception Distance (KID); generated cells track requested abundance and position, and measured morphology and color vary monotonically with their controls. We use these verified interventions to probe pathology encoders with endpoint heads, task-specific classifiers, and survival models. Responses are quantified using total variation distance and prediction-flip rate. We further introduce the Biology-Nuisance Sensitivity Ratio, a metric that contrasts model sensitivity to biologically motivated morphology and spatial factors with sensitivity to non-biological, stain-related nuisance variation. CPathOGen provides a practical, fidelity-audited framework for evaluating robustness and controlled feature sensitivity in computational pathology model. \\href{ this https URL }{GitHub} and \\href{ this https URL }{Hugging~Face}.",
+    "authors": [],
+    "source": "arXiv:q-bio.QM",
+    "url": "https://arxiv.org/abs/2610.00602",
+    "relevance": {
+      "relevance_score": 1,
+      "matching_topics": {
+        "Network Topology": 1
+      },
+      "keyword_matches": []
+    },
+    "novelty": [
+      "General theoretical or empirical work"
+    ],
+    "connection_to_your_work": [
+      "Relates to predictive coding and temporal prediction"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks"
+    ],
+    "key_insights": [
+      "Theoretical or computational analysis"
+    ]
+  },
+  {
+    "id": "2610.00866",
+    "title": "One Inference, Four Failure Modes: Formal Models of Why Pain Location Fails",
+    "abstract": "Patient-reported pain location is diagnostically decisive for some presentations and nearly uninformative for others. A companion paper argues this is not one gradient of diagnostic utility but three distinct failures of localization. This paper gives those failures their mathematics and shows they are one object: a single Bayesian generative model failing at different nodes - the likelihood, the model class, and group- or context-dependence in that same likelihood. The count is not in dispute: the first three are failures of the inference that produces a felt location, and the fourth, added here, is a failure of reporting it. Anatomical multiplexing is a non-identifiable inverse problem: a rank-deficient referral matrix sends distinct causes to one report. Delocalized amplification is a change of generative model whose dynamics are a neural-field bifurcation, with spatial extent as the order parameter. Referred and atypical displacement is group- or context-dependence in the presentation likelihood - a probability, not a loss - whose consequence sits one layer downstream, in a decision threshold varying with group prevalence and cost. Repeated observation cannot reduce recoverable information about a fixed inferential target, an exact chain-rule identity, while practical value can fall. The fourth node is the report itself. A spatial Bayesian model factorizes mislocalization into referral blur, an anatomical offset and a precision-weighted cognitive override, and reproduces phantom-limb, mirror-box and central-post-stroke reports as regimes of one equation. It is estimable under conditions the paper states as necessary or sufficient rather than assuming them; Sec. 8 gives the design that meets them. One control is reported against the paper&#39;s own interest: the transport statistic first used to measure migration scores a stationary, spreading profile as though it had travelled.",
+    "authors": [],
+    "source": "arXiv:q-bio.NC",
+    "url": "https://arxiv.org/abs/2610.00866",
+    "relevance": {
+      "relevance_score": 0,
+      "matching_topics": {},
+      "keyword_matches": []
+    },
+    "novelty": [
+      "Claims novelty",
+      "Provides experimental/empirical evidence"
+    ],
+    "connection_to_your_work": [
+      "Indirectly related \u2014 explore for cross-disciplinary insights"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks",
+      "Could reveal new dynamical principles in recurrent networks"
+    ],
+    "key_insights": [
+      "Demonstrates specific phenomena or capabilities",
+      "Focuses on network-level dynamics",
+      "Has biological/neural implications"
+    ]
+  },
+  {
+    "id": "2610.00746",
+    "title": "MEG-Mamba: A Scalable State-Space Foundation Model for Magnetoencephalography",
+    "abstract": "Magnetoencephalography (MEG) is an imaging technique that offers a non-invasive, millisecond-resolution view of human brain activity. The increasing availability of MEG data presents an opportunity to take advantage of a recent advance in artificial intelligence, namely self-supervised foundation models. Existing foundation models for MEG (and electroencephalography) have been built on a transformer architecture. Here, we introduce MEG-Mamba: a generative foundation model for neural activity (source reconstructed, parcellated MEG) built on a Mamba architecture. MEG-Mamba is trained to predict the next token of a discretised MEG signal, conditioned on a brain region and recording session. MEG-Mamba surpasses the generative fidelity of a transformer-based alternative (MEG-GPT) while pre-training in less time (22 vs 400 GPU-hours) and modelling a longer context (4 vs 0.32 s). We evaluate MEG-Mamba by examining the spatio-spectral characteristics of the data it generates and by interpreting its learned embeddings. Furthermore, we demonstrate that lightweight stimulus conditioning (LoRA) can be used to generate realistic task-evoked responses that are not included in pre-training. Our results suggest that Mamba is a promising backbone for scaling neural foundation models.",
+    "authors": [],
+    "source": "arXiv:q-bio.NC",
+    "url": "https://arxiv.org/abs/2610.00746",
+    "relevance": {
+      "relevance_score": 0,
+      "matching_topics": {},
+      "keyword_matches": []
+    },
+    "novelty": [
+      "Provides experimental/empirical evidence"
+    ],
+    "connection_to_your_work": [
+      "Indirectly related \u2014 explore for cross-disciplinary insights"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks"
+    ],
+    "key_insights": [
+      "Presents experimental/computational results",
+      "Demonstrates specific phenomena or capabilities",
+      "Suggests new theoretical directions",
+      "Has biological/neural implications"
+    ]
+  },
+  {
+    "id": "2610.00184",
+    "title": "Field closure, ice neurons, and when a dendrite is a motif",
+    "abstract": "Dendritic silhouettes are cheap. Pond ice neurons, diffusion-limited aggregates, wiring-minimizing arbors, and biological neurons can share a branching statistic because they share a growth instability, not because they are functionally similar. We take that observation as a modeling constraint. The ice neuron only structurally resembles a biological neuron. A biological neuron carries an internal state and a field that it helps generate, letting geometry, dynamics, and field co-sculpt one another. In our construction, the ice neuron is the zero-gain limit of an interfacial system in which a FitzHugh--Nagumo state lives on the moving front and writes back into the field that drives it, with dimensionless gain",
+    "authors": [],
+    "source": "arXiv:q-bio.NC",
+    "url": "https://arxiv.org/abs/2610.00184",
+    "relevance": {
+      "relevance_score": 0,
+      "matching_topics": {},
+      "keyword_matches": []
+    },
+    "novelty": [
+      "General theoretical or empirical work"
+    ],
+    "connection_to_your_work": [
+      "Indirectly related \u2014 explore for cross-disciplinary insights"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks",
+      "Could reveal new dynamical principles in recurrent networks"
+    ],
+    "key_insights": [
+      "Focuses on network-level dynamics"
+    ]
+  },
+  {
+    "id": "2610.01468",
+    "title": "LESS: Lightweight Evolutionary Supernet Search in Minutes",
+    "abstract": "Low-cost NAS must both explore high-performing architectures and identify them reliably, yet reducing evaluation cost often weakens the fidelity of candidate comparisons. Training-free methods reduce evaluation cost by replacing learned task feedback with proxy signals measured at initialization. We introduce LESS (Lightweight Evolutionary Supernet Search), a data-driven method that combines a brief fair hard-path warm-up with discrete search under a single CMA-ES distribution. Each proposal is evaluated as its decoded hard genotype after six candidate-conditioned supernet updates. On NAS-Bench-201, LESS achieves \\(93.189\\pm0.467\\%\\) CIFAR-10 test accuracy in 409.1 seconds, coming within 0.04 percentage points of FairNAS using approximately \\(1/24\\) of its source-reported search time. Matched controls show that calibration improves selected validation accuracy by \\(0.577\\) percentage points while changing best-visited accuracy by only \\(0.054\\) points, indicating that its primary effect is to reduce selection regret. The frozen configuration transfers without tuning to CIFAR-100 and ImageNet16-120 with \\(69.615\\pm1.139\\%\\) and \\(43.720\\pm1.697\\%\\) accuracy. Applied without tuning to the larger DARTS space, LESS achieves \\(96.95\\pm0.14\\%\\) on CIFAR-10 and \\(82.43\\pm0.80\\%\\) on CIFAR-100, with each search completing in approximately 43.5 minutes on a single GPU. Together, these results show that short, balanced, data-dependent updates enable competitive neural architecture search across datasets and search spaces within minutes.",
+    "authors": [],
+    "source": "arXiv:cs.NE",
+    "url": "https://arxiv.org/abs/2610.01468",
+    "relevance": {
+      "relevance_score": 0,
+      "matching_topics": {},
+      "keyword_matches": []
+    },
+    "novelty": [
+      "Provides experimental/empirical evidence"
+    ],
+    "connection_to_your_work": [
+      "Indirectly related \u2014 explore for cross-disciplinary insights"
+    ],
+    "potential_benefit": [
+      "Explore for potential cross-disciplinary applications"
+    ],
+    "key_insights": [
+      "Presents experimental/computational results",
+      "Demonstrates specific phenomena or capabilities",
+      "Introduces new methodological approach",
+      "Has biological/neural implications"
+    ]
+  },
+  {
+    "id": "2610.00753",
+    "title": "Increasing Width Allows Greedy Layer-wise Training to Rival End-to-End Backpropagation in Self-Supervised Learning",
+    "abstract": "End-to-end backpropagation has been the dominant mode of training in deep learning, allowing for the coordination of parameter updates across layers of a neural network. Prior studies have explored alternative -- and, in some cases, simpler -- training mechanisms, showing that they can sometimes achieve performance similar to backpropagation. However, the architectural conditions under which locally optimized networks, which avoid end-to-end backpropagation of error, can learn representations comparable to those learned through end-to-end training remain unclear. We aim to answer this question in the context of self-supervised learning, an important framework for large-scale pretraining in artificial intelligence. Here, we investigate how network width and depth affect the efficacy of greedy layer-wise and end-to-end self-supervised training in convolutional networks. We find that in wider networks, the benefits of end-to-end backpropagation over greedy layer-wise training shrink: in relatively shallow and very wide networks, we even observed higher performance in models trained with greedy layer-wise training. Subsequent analysis of the representations formed by these networks shows that very wide greedy-trained networks exhibit more favorable representational geometry than do networks trained end-to-end with backpropagation. This work shows that width can compensate for restricted credit assignment and identifies differences in representational geometry as a potential mechanism for their improved performance.",
+    "authors": [],
+    "source": "arXiv:cs.NE",
+    "url": "https://arxiv.org/abs/2610.00753",
+    "relevance": {
+      "relevance_score": 0,
+      "matching_topics": {},
+      "keyword_matches": []
+    },
+    "novelty": [
+      "Provides experimental/empirical evidence"
+    ],
+    "connection_to_your_work": [
+      "Indirectly related \u2014 explore for cross-disciplinary insights"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks"
+    ],
+    "key_insights": [
+      "Demonstrates specific phenomena or capabilities",
+      "Focuses on network-level dynamics",
+      "Has biological/neural implications"
+    ]
+  },
+  {
+    "id": "2610.02198",
+    "title": "FERPO: Forward Entropy-Regularized Policy Optimization",
+    "abstract": "Several state-of-the-art methods for online reinforcement learning in continuous control improve policies using action gradients of a learned critic. However, critics are typically trained to predict returns, and accurate value predictions do not necessarily yield accurate action derivatives, potentially leading to unreliable policy updates. We propose Forward Entropy-Regularized Policy Optimization (FERPO), an on-policy maximum entropy reinforcement learning algorithm that performs policy improvement using critic values without differentiating the critic with respect to actions. FERPO derives an optimal target action distribution from a policy-improvement objective regularized by entropy and Kullback-Leibler (KL) divergence. We then fit the actor to this target by minimizing a forward-KL objective, estimated using self-normalized importance sampling (SNIS) with actions drawn from the rollout policy. By limiting the target distribution&#39;s deviation from the rollout policy, the KL regularization helps keep these importance weights well behaved. In contrast to reverse-KL objectives, which can favor a subset of the target distribution&#39;s modes, the forward-KL objective encourages coverage of multiple high-value modes and thereby promotes exploration. Experiments and ablations on MuJoCo Playground and ManiSkill show competitive performance and sample-efficiency gains. Computational benchmarks also demonstrate faster actor updates than Relative Entropy Pathwise Policy Optimization (REPPO).",
+    "authors": [],
+    "source": "arXiv:cs.LG",
+    "url": "https://arxiv.org/abs/2610.02198",
+    "relevance": {
+      "relevance_score": 0,
+      "matching_topics": {},
+      "keyword_matches": []
+    },
+    "novelty": [
+      "Provides experimental/empirical evidence"
+    ],
+    "connection_to_your_work": [
+      "Relates to predictive coding and temporal prediction"
+    ],
+    "potential_benefit": [
+      "Explore for potential cross-disciplinary applications"
+    ],
+    "key_insights": [
+      "Demonstrates specific phenomena or capabilities",
+      "Introduces new methodological approach"
+    ]
+  },
+  {
+    "id": "2610.02191",
+    "title": "The Missing Primitive: Diagnosing and Repairing Mathematical Reasoning in Large Language Models",
+    "abstract": "While Large Language Models (LLMs) have demonstrated striking capabilities on frontier mathematical problems, it remains unclear whether they possess the structural mathematical understanding underlying their solutions. In this paper, we take a first step toward systematically studying mathematical understanding in LLMs, from diagnosing its distinct capabilities to leveraging these findings to improve post-training. First, we introduce the notion of Mathematical Primitive to probe structural mathematical understanding and propose \\hlei{}, a novel benchmark that evaluates mathematical reasoning along four distinct dimensions: Discovery, Generation, Digestion, and Execution. Second, our systematic diagnosis shows that solution accuracy masks distinct capability profiles, primitives unlock substantial latent execution capacity, and Discovery is the dominant bottleneck in mathematical reasoning. Our post-training analysis further shows that discovery-limited failures are particularly amenable to repair. Finally, building on these findings, we introduce \\abs{}, a primitive-privileged self-distillation framework that selectively transfers primitive-guided reasoning into the student model. Extensive experiments demonstrate that \\abs{} consistently improves mathematical reasoning over baselines across model scales and challenging benchmarks.",
+    "authors": [],
+    "source": "arXiv:cs.LG",
+    "url": "https://arxiv.org/abs/2610.02191",
+    "relevance": {
+      "relevance_score": 0,
+      "matching_topics": {},
+      "keyword_matches": []
+    },
+    "novelty": [
+      "Claims novelty",
+      "Provides experimental/empirical evidence"
+    ],
+    "connection_to_your_work": [
+      "Indirectly related \u2014 explore for cross-disciplinary insights"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks"
+    ],
+    "key_insights": [
+      "Demonstrates specific phenomena or capabilities"
+    ]
+  },
+  {
+    "id": "2610.02190",
+    "title": "Trust the Direction, Search the Step: Zero-and-First-Order Methods for LLM Fine-Tuning",
+    "abstract": "Step-size selection remains a central challenge in large-scale neural network optimization; conservative steps slow convergence, while aggressive steps can destabilize it. We combine \\textbf{Z}ero-and-\\textbf{F}irst-\\textbf{O}rder optimization~(ZFO) and propose a lightweight framework that decouples direction selection from step-size. ZFO uses a trusted first-order optimizer to determine the direction and performs zeroth-order evaluations only along this one-dimensional subspace to choose how far to move. Using the current {gradient information} and two additional objective function evaluations, ZFO instances construct a local model of the objective function along the proposed direction and select a curvature-aware step within a bounded search interval. This yields an adaptive step-selection mechanism that costs less than a full line search. We provide theoretical guarantees to show that shared-sample evaluations produce reliable finite-difference curvature estimates, that the induced local model selects a near-optimal step along the search interval, and that ZFO converges to a neighborhood of a stationary point. Across the evaluated settings, language models and datasets, ZFO frequently improves optimization and final performance relative to fixed-step first-order baselines, with the magnitude and preferred local model depending on the objective. Our code is publicly available at: this https URL .",
+    "authors": [],
+    "source": "arXiv:cs.LG",
+    "url": "https://arxiv.org/abs/2610.02190",
+    "relevance": {
+      "relevance_score": 0,
+      "matching_topics": {},
+      "keyword_matches": []
+    },
+    "novelty": [
+      "Claims novelty",
+      "Proposes new method/approach",
+      "Provides experimental/empirical evidence",
+      "Challenges existing assumptions"
+    ],
+    "connection_to_your_work": [
+      "Indirectly related \u2014 explore for cross-disciplinary insights"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks"
+    ],
+    "key_insights": [
+      "Demonstrates specific phenomena or capabilities",
+      "Focuses on network-level dynamics",
+      "Has biological/neural implications"
+    ]
+  },
+  {
+    "id": "2610.02179",
+    "title": "From Gradients to Capabilities: Understanding Multi-Teacher On-Policy Distillation",
+    "abstract": "Multi-teacher on-policy distillation (MOPD) aims to combine the strengths of RL-trained teachers in a single student, but how teacher signals affect parameter changes remains underexplored. We study Qwen3-1.7B with four domain teachers trained with RL from the same initialization as the student, comparing gradients, optimizer updates, and task learning curves, with additional SmolLM3-3B diagnostics. We find that several factors influence teacher signals. First, loss averaging implicitly weights responses: token averaging favors longer responses, and equalizing domain contributions retains this weighting within domains. Second, Adam&#39;s first moment reduces differences in parameter updates: the cosine similarity is 0.83 between teachers and 0.96 between averaging rules, despite differences in raw gradients. Third, BF16 rounding hides small changes: about 97\\% of FP32 master weights differ from initialization, but only 7--11\\% of BF16 weights do. Finally, the top-64 intersection KL gradient closely matches Qwen&#39;s full-vocabulary gradient, but the effect on task performance depends on averaging: mathematics accuracy is 2.6 points higher than with sampled-token policy-gradient (PG) under response averaging and 2.1 points lower under global token averaging.",
+    "authors": [],
+    "source": "arXiv:cs.LG",
+    "url": "https://arxiv.org/abs/2610.02179",
+    "relevance": {
+      "relevance_score": 0,
+      "matching_topics": {},
+      "keyword_matches": []
+    },
+    "novelty": [
+      "Claims novelty"
+    ],
+    "connection_to_your_work": [
+      "Indirectly related \u2014 explore for cross-disciplinary insights"
+    ],
+    "potential_benefit": [
+      "Explore for potential cross-disciplinary applications"
+    ],
+    "key_insights": [
+      "Theoretical or computational analysis"
+    ]
+  },
+  {
+    "id": "2610.00191",
+    "title": "Improving scoring functions for protein-protein docking with LambdaLoss",
+    "abstract": "Modeling protein-protein interactions requires accurate scoring functions that can rank potential poses (conformations) of a protein-protein complex to differentiate near-native poses from incorrect ones. Here, we propose a general framework for improving protein-protein pose ranking and other biomolecular interaction models using the LambdaLoss loss function from the Learning-to-Rank field. We test this framework by fine-tuning the energy prediction head of DFMDock with the LambdaLoss on an augmented dataset of 2.9M decoy poses derived from the DIPS dataset. On targets from the CAPRI score set benchmark, our fine-tuned ranking model LambdaDockScore is better at identifying correct poses in its top-1 and top-5 predictions compared to EuDockScore, a state-of-the-art method. LambdaDockScore also improves upon baseline DFMDock ranking performance for scoring antibody-antigen complexes and protein-protein complexes with very large or small binding interfaces.",
+    "authors": [],
+    "source": "arXiv:q-bio.QM",
+    "url": "https://arxiv.org/abs/2610.00191",
+    "relevance": {
+      "relevance_score": 0,
+      "matching_topics": {},
+      "keyword_matches": []
+    },
+    "novelty": [
+      "General theoretical or empirical work"
+    ],
+    "connection_to_your_work": [
+      "Relates to predictive coding and temporal prediction"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks"
+    ],
+    "key_insights": [
+      "Introduces new methodological approach"
+    ]
+  },
+  {
+    "id": "2610.01616",
+    "title": "Can LLMs Reliably Annotate Bioassay Metadata to Improve Data Readiness?",
+    "abstract": "The emergence of foundation models for molecular property prediction requires a high degree of AI data readiness, including reliable metadata annotation. However, both public repositories and industrial screening databases suffer from missing, inconsistent, or conflated assay annotations. In this work, we quantify the extent of missing annotations in PubChem for the BioAssay Ontology (BAO) assay format and physical detection method fields and investigate whether open-source and proprietary large language models (LLMs) can reliably predict and audit metadata annotations directly from the assay text. In our assessment, we found that the annotation coverage across PubChem&#39;s",
+    "authors": [],
+    "source": "arXiv:q-bio.QM",
+    "url": "https://arxiv.org/abs/2610.01616",
+    "relevance": {
+      "relevance_score": 0,
+      "matching_topics": {},
+      "keyword_matches": []
+    },
+    "novelty": [
+      "General theoretical or empirical work"
+    ],
+    "connection_to_your_work": [
+      "Relates to predictive coding and temporal prediction"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks"
+    ],
+    "key_insights": [
+      "Introduces new methodological approach"
+    ]
+  },
+  {
+    "id": "2609.40202",
+    "title": "Covariance Eigenspace Provides Latent Attribution of Longitudinal Effects in Brain Age Gap",
+    "abstract": "Brain age gap is a promising machine learning (ML)-driven bio\\-marker of accelerated biological aging and is derived from neuroimaging data. Recent works on coVariance neural networks (VNN) for brain age gap prediction have provided an explainable and anatomically verifiable framework for brain age gap prediction. Notably, VNN outcomes are derived by filtering inputs along covariance eigenvectors, providing a mechanism for explaining their decisions in terms of latent (orthogonal) vectors. In this paper, we investigate the longitudinal brain age gap effects in a Mild Cognitive Impairment (MCI) cohort using a VNN-driven brain age gap prediction framework. Specifically, using Integrated Gradients (IG) as the attribution mechanism, our results demonstrate that the eigenspectrum of the anatomical covariance matrix explains the different longitudinal effects observed in brain age gap in amyloid positive vs amyloid negative subcohorts more prominently than individual brain regions (",
+    "authors": [],
+    "source": "arXiv:q-bio.QM",
+    "url": "https://arxiv.org/abs/2609.40202",
+    "relevance": {
+      "relevance_score": 0,
+      "matching_topics": {},
+      "keyword_matches": []
+    },
+    "novelty": [
+      "Provides experimental/empirical evidence"
+    ],
+    "connection_to_your_work": [
+      "Relates to predictive coding and temporal prediction"
+    ],
+    "potential_benefit": [
+      "May provide new theoretical insights applicable to your frameworks",
+      "May inspire biologically plausible learning rules for your networks"
+    ],
+    "key_insights": [
+      "Presents experimental/computational results",
+      "Demonstrates specific phenomena or capabilities",
+      "Focuses on network-level dynamics",
+      "Has biological/neural implications"
+    ]
+  },
+  {
+    "id": "2609.39830",
+    "title": "MerKurio: sequence extraction and annotation based on matching k-mers",
+    "abstract": "K-mers, short subsequences of length k, play an important role in computational analyses using biological sequence data. A critical downstream processing step involves getting back to the source sequences of selected k-mers for further analysis or validation. Here, we present MerKurio, a high-performance command line tool written in Rust with two main functionalities: 1) extracting sequence records from FASTA/FASTQ files using k-mers and 2) annotating or filtering aligned sequences in SAM/BAM files with k-mer tags. The tool automatically selects the pattern matching algorithm via empirically derived rules based on query characteristics and supports paired-end reads, compressed input files, and reverse complement searching. Benchmark comparisons demonstrate that MerKurio outperforms existing tools in terms of speed while providing additional utility including detailed matching statistics and comprehensive file format support. MerKurio is a fast and user-friendly tool for sequence record extraction and tagging of aligned sequences based on k-mers. MerKurio is freely available at this https URL .",
+    "authors": [],
+    "source": "arXiv:q-bio.QM",
+    "url": "https://arxiv.org/abs/2609.39830",
+    "relevance": {
+      "relevance_score": 0,
+      "matching_topics": {},
+      "keyword_matches": []
+    },
+    "novelty": [
+      "Provides experimental/empirical evidence"
+    ],
+    "connection_to_your_work": [
+      "Indirectly related \u2014 explore for cross-disciplinary insights"
+    ],
+    "potential_benefit": [
+      "Explore for potential cross-disciplinary applications"
+    ],
+    "key_insights": [
+      "Demonstrates specific phenomena or capabilities"
+    ]
+  }
+]

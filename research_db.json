@@ -1,0 +1,159 @@
+{
+  "your_research": {
+    "profile": "Gordon Pipa - Professor for neuroinformatics, Osnabrueck University",
+    "h_index": 33,
+    "total_citations": 7695,
+    "total_papers": 52,
+    "key_areas": [
+      "Self-organizing recurrent neural networks (SORN)",
+      "Transfer entropy & effective connectivity",
+      "Neural synchrony & gamma oscillations",
+      "Cross-frequency coupling in neuroscience",
+      "Dynamical relaying in cortical networks",
+      "Fading memory in recurrent networks",
+      "Network topology extraction from recordings",
+      "High-frequency gamma-band activity",
+      "Theoretical neuroscience",
+      "Computational cognition"
+    ],
+    "core_papers": [
+      {
+        "title": "SORN: a self-organizing recurrent neural network",
+        "year": 2009,
+        "citations": 335,
+        "keywords": [
+          "self-organization",
+          "recurrent",
+          "spiking",
+          "plasticity",
+          "homeostasis"
+        ]
+      },
+      {
+        "title": "Transfer entropy\u2014a model-free measure of effective connectivity",
+        "year": 2011,
+        "citations": 1367,
+        "keywords": [
+          "transfer entropy",
+          "effective connectivity",
+          "information theory",
+          "neuroscience"
+        ]
+      },
+      {
+        "title": "Neural synchrony in cortical networks: history, concept and current status",
+        "year": 2009,
+        "citations": 1047,
+        "keywords": [
+          "synchrony",
+          "gamma",
+          "network dynamics",
+          "oscillations"
+        ]
+      },
+      {
+        "title": "Untangling cross-frequency coupling in neuroscience",
+        "year": 2015,
+        "citations": 729,
+        "keywords": [
+          "cross-frequency",
+          "coupling",
+          "oscillations",
+          "multi-scale"
+        ]
+      },
+      {
+        "title": "Dynamical relaying can yield zero time lag neuronal synchrony",
+        "year": 2008,
+        "citations": 431,
+        "keywords": [
+          "dynamical relaying",
+          "synchrony",
+          "conduction delays"
+        ]
+      },
+      {
+        "title": "Fading memory and time series prediction in recurrent networks",
+        "year": 2007,
+        "citations": 109,
+        "keywords": [
+          "fading memory",
+          "recurrent",
+          "temporal processing"
+        ]
+      }
+    ]
+  },
+  "research_themes": {
+    "spiking_networks": {
+      "keywords": [
+        "spiking",
+        "SNN",
+        "leaky integrate-and-fire",
+        "STDP"
+      ],
+      "your_contribution": "Theoretical framework for recurrent spiking dynamics",
+      "connection_strength": "HIGH"
+    },
+    "self_organizing_dynamics": {
+      "keywords": [
+        "self-organization",
+        "homeostasis",
+        "criticality",
+        "avalanches"
+      ],
+      "your_contribution": "SORN model - plasticity + homeostasis for stable self-organization",
+      "connection_strength": "HIGH"
+    },
+    "information_processing": {
+      "keywords": [
+        "transfer entropy",
+        "effective connectivity",
+        "information flow"
+      ],
+      "your_contribution": "Transfer entropy framework for measuring information flow",
+      "connection_strength": "HIGH"
+    },
+    "network_dynamics": {
+      "keywords": [
+        "synchrony",
+        "oscillations",
+        "gamma",
+        "cross-frequency",
+        "attractors"
+      ],
+      "your_contribution": "Multiple high-impact papers on neural synchrony and oscillations",
+      "connection_strength": "HIGH"
+    },
+    "temporal_processing": {
+      "keywords": [
+        "fading memory",
+        "temporal dynamics",
+        "time series",
+        "predictive coding"
+      ],
+      "your_contribution": "Early work on fading memory in recurrent networks",
+      "connection_strength": "MEDIUM"
+    },
+    "plasticity_learning": {
+      "keywords": [
+        "STDP",
+        "plasticity",
+        "learning rules",
+        "credit assignment"
+      ],
+      "your_contribution": "Theoretical analysis of plasticity mechanisms",
+      "connection_strength": "MEDIUM"
+    },
+    "criticality": {
+      "keywords": [
+        "criticality",
+        "neuronal avalanches",
+        "scale-free",
+        "phase transitions"
+      ],
+      "your_contribution": "Implicit through network dynamics work",
+      "connection_strength": "MEDIUM"
+    }
+  }
+}
