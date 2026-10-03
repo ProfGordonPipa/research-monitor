@@ -3,142 +3,150 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Research Mindmap — Gordon Pipa: Self-Organizing Recurrent Spiking Networks</title>
-<script src="https://d3js.org/d3.v7.min.js"></script>
+<title>Research Mindmap — Gordon Pipa</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <style>
-body { margin: 0; background: #0a0a0f; color: #e0e0e0; font-family: 'Inter', system-ui, sans-serif; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #0a0a12; color: #e0e0e0; font-family: -apple-system, 'Segoe UI', sans-serif; overflow: hidden; }
 #mindmap { width: 100vw; height: 100vh; }
-.tooltip { position: absolute; background: rgba(20,20,35,0.95); border: 1px solid rgba(100,140,255,0.3); border-radius: 8px; padding: 10px 14px; font-size: 13px; pointer-events: none; max-width: 320px; line-height: 1.5; }
+.tooltip { position: absolute; background: rgba(15,15,30,0.95); border: 1px solid rgba(100,140,255,0.3); border-radius: 8px; padding: 10px 14px; font-size: 12px; pointer-events: none; max-width: 340px; line-height: 1.6; display: none; box-shadow: 0 4px 20px rgba(0,0,0,0.5); z-index: 1000; }
+.legend { position: absolute; top: 15px; right: 15px; background: rgba(15,15,30,0.9); border: 1px solid rgba(100,140,255,0.2); border-radius: 8px; padding: 12px 16px; font-size: 12px; z-index: 100; }
+.legend-item { display: flex; align-items: center; margin: 4px 0; }
+.legend-color { width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; }
+.title-text { font-size: 14px; font-weight: 300; fill: #666; }
+.node-label { font-size: 10px; fill: #ccc; }
+.node-label-center { font-size: 14px; font-weight: 700; fill: #ff6b35; }
+.node-circle { stroke: rgba(255,255,255,0.15); stroke-width: 1.5px; cursor: pointer; transition: opacity 0.2s; }
+.node-circle:hover { opacity: 1; filter: brightness(1.3); }
+.node-circle-center { stroke: rgba(255,107,53,0.4); stroke-width: 3px; cursor: pointer; }
+.link { fill: none; pointer-events: none; }
+.zoom-controls { position: absolute; bottom: 20px; right: 20px; z-index: 100; display: flex; gap: 8px; }
+.zoom-btn { width: 36px; height: 36px; border-radius: 8px; background: rgba(15,15,30,0.9); border: 1px solid rgba(100,140,255,0.2); color: #fff; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.zoom-btn:hover { background: rgba(30,30,60,0.9); }
 </style>
 </head>
 <body>
-<div id="mindmap"></div>
-<div class="tooltip" id="tooltip" style="display:none;"></div>
+<svg id="mindmap"></svg>
+<div class="tooltip" id="tooltip"></div>
+<div class="legend">
+<div style="font-weight:600;margin-bottom:8px;color:#aaa;">Legend</div>
+<div class="legend-item"><div class="legend-color" style="background:#ff6b35;"></div>Your central research</div>
+<div class="legend-item"><div class="legend-color" style="background:#4fc3f7;"></div>Your publications</div>
+<div class="legend-item"><div class="legend-color" style="background:#81c784;"></div>Research domains</div>
+<div class="legend-item"><div class="legend-color" style="background:#ffb74d;"></div>Methods</div>
+<div class="legend-item"><div class="legend-color" style="background:#f48fb1;"></div>New papers (arXiv)</div>
+</div>
+
 <script>
+// --- DATA ---
 const nodes = [
-  // Central node
-  {id: "center", label: "Self-Organizing\nRecurrent Spiking\nNetworks", group: "center", fx: 0, fy: 0, r: 28},
+  { id: "center", label: "Self-Organizing Recurrent Spiking Networks", group: "center", r: 24 },
 
-  // Gordon Pipa's own work
-  {id: "sorn", label: "SORN\n(Lazar/Pipa/Triesch 2009)", group: "pipa", r: 18},
-  {id: "transfer_entropy", label: "Transfer Entropy\n(Vicente/Pipa 2011)\n1367 citations", group: "pipa", r: 18},
-  {id: "neural_sync", label: "Neural Synchrony\n(Uhlhaas/Pipa 2009)\n1047 citations", group: "pipa", r: 18},
-  {id: "cross_freq", label: "Cross-Frequency\nCoupling (Aru/Pipa 2015)\n729 citations", group: "pipa", r: 18},
-  {id: "dynamical_relay", label: "Dynamical Relaying\n(Vicente/Pipa 2008)\n431 citations", group: "pipa", r: 18},
-  {id: "fading_memory", label: "Fading Memory\n(Lazar/Pipa/Triesch 2007)\n109 citations", group: "pipa", r: 18},
-  {id: "neuroxidence", label: "NeuroXidence\n(Pipa et al. 2008)\n107 citations", group: "pipa", r: 18},
-  {id: "network_topo", label: "Network Topology\n(Gerhard/Pipa 2011)\n153 citations", group: "pipa", r: 18},
-  {id: "gamma", label: "High-Gamma Activity\n(Uhlhaas/Pipa 2011)\n254 citations", group: "pipa", r: 18},
-  {id: "moral_dilemma", label: "Moral Decisions in\nVR/Dilemmas\n(Skulmowski/Pipa 2014)", group: "pipa", r: 18},
+  // YOUR PUBLICATIONS
+  { id: "sorn", label: "SORN (2009)", year: "2009", cites: 335, group: "pipa", r: 16 },
+  { id: "transfer_entropy", label: "Transfer Entropy (2011)", year: "2011", cites: 1367, group: "pipa", r: 16 },
+  { id: "neural_sync", label: "Neural Synchrony (2009)", year: "2009", cites: 1047, group: "pipa", r: 16 },
+  { id: "cross_freq", label: "Cross-Frequency Coupling (2015)", year: "2015", cites: 729, group: "pipa", r: 15 },
+  { id: "dynamical_relay", label: "Dynamical Relaying (2008)", year: "2008", cites: 431, group: "pipa", r: 15 },
+  { id: "fading_memory", label: "Fading Memory (2007)", year: "2007", cites: 109, group: "pipa", r: 14 },
+  { id: "neuroxidence", label: "NeuroXidence (2008)", year: "2008", cites: 107, group: "pipa", r: 14 },
+  { id: "network_topo", label: "Network Topology (2011)", year: "2011", cites: 153, group: "pipa", r: 14 },
+  { id: "gamma", label: "High-Gamma Activity (2011)", year: "2011", cites: 254, group: "pipa", r: 15 },
+  { id: "moral_dilemma", label: "Moral Decisions in VR (2014)", year: "2014", cites: 38, group: "pipa", r: 14 },
 
-  // Research domains
-  {id: "recurrent", label: "Recurrent Network\nDynamics", group: "domain"},
-  {id: "self_org", label: "Self-Organization\n& Homeostasis", group: "domain"},
-  {id: "spiking", label: "Spiking Neural\nNetworks", group: "domain"},
-  {id: "info_proc", label: "Information\nProcessing", group: "domain"},
-  {id: "mem", label: "Memory &\nTemporal Processing", group: "domain"},
-  {id: "plasticity", label: "Plasticity &\nLearning Rules", group: "domain"},
-  {id: "eff_conn", label: "Effective\nConnectivity", group: "domain"},
-  {id: "oscillations", label: "Neural Oscillations\n& Rhythms", group: "domain"},
-  {id: "attractor", label: "Attractor\nDynamics", group: "domain"},
-  {id: "criticality", label: "Criticality &\nNeuronal Avalanches", group: "domain"},
-  {id: "predictive", label: "Predictive\nCoding", group: "domain"},
+  // RESEARCH DOMAINS
+  { id: "recurrent", label: "Recurrent\nNetwork Dynamics", group: "domain" },
+  { id: "self_org", label: "Self-Organization\n& Homeostasis", group: "domain" },
+  { id: "spiking", label: "Spiking Neural\nNetworks", group: "domain" },
+  { id: "info_proc", label: "Information\nProcessing", group: "domain" },
+  { id: "mem", label: "Memory & Temporal\nProcessing", group: "domain" },
+  { id: "plasticity", label: "Plasticity &\nLearning Rules", group: "domain" },
+  { id: "eff_conn", label: "Effective\nConnectivity", group: "domain" },
+  { id: "oscillations", label: "Neural Oscillations\n& Rhythms", group: "domain" },
+  { id: "attractor", label: "Attractor\nDynamics", group: "domain" },
+  { id: "criticality", label: "Criticality &\nNeuronal Avalanches", group: "domain" },
+  { id: "predictive", label: "Predictive\nCoding", group: "domain" },
+  { id: "network_sc", label: "Network\nScience", group: "domain" },
 
-  // Key methods
-  {id: "info_theory", label: "Information\nTheory", group: "method"},
-  {id: "network_science", label: "Network\nScience", group: "method"},
-  {id: "computational_model", label: "Computational\nModeling", group: "method"},
-  {id: "eeg_meg", label: "EEG/MEG\nAnalysis", group: "method"},
-  {id: "vr_exp", label: "Virtual Reality\nExperiments", group: "method"},
-  {id: "state_space", label: "State-Space\nDynamics", group: "method"},
+  // METHODS
+  { id: "info_theory", label: "Information\nTheory", group: "method" },
+  { id: "comp_model", label: "Computational\nModeling", group: "method" },
+  { id: "eeg_meg", label: "EEG/MEG\nAnalysis", group: "method" },
+  { id: "state_space", label: "State-Space\nDynamics", group: "method" },
+  { id: "vr_exp", label: "Virtual Reality\nExperiments", group: "method" },
 
-  // Recent papers from arXiv (key ones)
-  {id: "p_pyaval", label: "pyAvalanches\n(Spatiotemporal\nAvalanches)", group: "recent", newPaper: true},
-  {id: "p_critical", label: "Emergence of\nCriticality in\nReal Neurons", group: "recent", newPaper: true},
-  {id: "p_fisher", label: "Fisher Information\nMetric for\nCriticality", group: "recent", newPaper: true},
-  {id: "p_gradient", label: "Gradient-based\nSTDP Solution\n(SNN credit assignment)", group: "recent", newPaper: true},
-  {id: "p_reservoir", label: "Connectome\nReservoir\nComputing", group: "recent", newPaper: true},
-  {id: "p_prospective", label: "Prospective\nCoding in\nRTN networks", group: "recent", newPaper: true},
-  {id: "p_struct_attract", label: "Structural\nAttractors\n(Neuromorphic)", group: "recent", newPaper: true},
-  {id: "p_axonal", label: "Axonal Delay\nDispersion\n(Temporal coding)", group: "recent", newPaper: true},
-  {id: "p_highorder", label: "High-Order\nFunctional\nConnectivity", group: "recent", newPaper: true},
-  {id: "p_fisher_kin", label: "Fisher-Rao\nDistance\n(Kinematic/Cognitive)", group: "recent", newPaper: true},
-  {id: "p_homeostasis", label: "Homeostasis\nvia Hidden\nMarkov Models", group: "recent", newPaper: true},
-  {id: "p_degeneracy", label: "Degeneracy\nin Motor\nControl", group: "recent", newPaper: true},
-  {id: "p_platonic", label: "Platonic Brain\nBridge (ML→Brain)", group: "recent", newPaper: true},
-  {id: "p_attn", label: "Outcome-Indexed\nAttention (vs\nShared Attn)", group: "recent", newPaper: true},
-  {id: "p_cortex", label: "Conserved\nHemispherical\nDynamics", group: "recent", newPaper: true},
-  {id: "p_meg", label: "MEG Foundation\nModels", group: "recent", newPaper: true},
+  // NEW PAPERS
+  { id: "p_motif", label: "Stochastic Dynamics of Motif-Embedded\nSpiking Networks", source: "arXiv:2610.00616", group: "recent" },
+  { id: "p_temporal", label: "Multi-Scale Temporal Flows for\nTrajectory Generation", source: "arXiv:2610.01086", group: "recent" },
+  { id: "p_stdp", label: "Gradient-based STDP Solution to\nCredit Assignment", source: "arXiv:2609.08070", group: "recent" },
+  { id: "p_reservoir", label: "Determinants of Hyperparameter\nRobustness in Reservoir Computing", source: "arXiv:2609.07355", group: "recent" },
+  { id: "p_struct", label: "Formation of Structural\nAttractors in Neuromorphic Systems", source: "arXiv:2609.06826", group: "recent" },
+  { id: "p_critical", label: "Emergence of Criticality in\nModels of Real Neurons", source: "arXiv:2609.09438", group: "recent" },
+  { id: "p_fisher", label: "Fisher Information Metric as\nMeasure of Criticality", source: "arXiv:2609.07624", group: "recent" },
+  { id: "p_prospective", label: "Prospective Coding\nImproves Deep RTN Learning", source: "arXiv:2609.04134", group: "recent" },
+  { id: "p_highorder", label: "High-Order Triadic\nFunctional Connectivity", source: "arXiv:2609.03987", group: "recent" },
+  { id: "p_axonal", label: "Axonal Delay Dispersion\nDecides Event vs Sequence", source: "arXiv:2609.04195", group: "recent" },
+  { id: "p_pyaval", label: "pyAvalanches: Python\nPackage for Avalanches", source: "arXiv:2609.11530", group: "recent" },
+  { id: "p_homeostasis", label: "Homeostasis via\nHMM Control", source: "arXiv:2609.07508", group: "recent" },
+  { id: "p_meg", label: "MEG Foundation Models", source: "arXiv:2609.08694", group: "recent" },
+  { id: "p_cortex", label: "Conserved\nHemispherical Dynamics", source: "arXiv:2609.04308", group: "recent" },
 ];
 
 const links = [
-  // Center to Pipa's work
-  {source: "center", target: "sorn"},
-  {source: "center", target: "transfer_entropy"},
-  {source: "center", target: "neural_sync"},
-  {source: "center", target: "cross_freq"},
-  {source: "center", target: "dynamical_relay"},
-  {source: "center", target: "fading_memory"},
-  {source: "center", target: "neuroxidence"},
-  {source: "center", target: "network_topo"},
-  {source: "center", target: "gamma"},
-  {source: "center", target: "moral_dilemma"},
+  // Center -> Your publications
+  { source: "center", target: "sorn" },
+  { source: "center", target: "transfer_entropy" },
+  { source: "center", target: "neural_sync" },
+  { source: "center", target: "cross_freq" },
+  { source: "center", target: "dynamical_relay" },
+  { source: "center", target: "fading_memory" },
+  { source: "center", target: "neuroxidence" },
+  { source: "center", target: "network_topo" },
+  { source: "center", target: "gamma" },
+  { source: "center", target: "moral_dilemma" },
 
-  // Domain connections
-  {source: "sorn", target: "recurrent"}, {source: "sorn", target: "self_org"},
-  {source: "sorn", target: "spiking"}, {source: "sorn", target: "plasticity"},
-  {source: "transfer_entropy", target: "eff_conn"}, {source: "transfer_entropy", target: "info_theory"},
-  {source: "neural_sync", target: "oscillations"}, {source: "neural_sync", target: "recurrent"},
-  {source: "cross_freq", target: "oscillations"}, {source: "cross_freq", target: "network_science"},
-  {source: "dynamical_relay", target: "recurrent"}, {source: "dynamical_relay", target: "attractor"},
-  {source: "fading_memory", target: "mem"}, {source: "fading_memory", target: "recurrent"},
-  {source: "neuroxidence", target: "network_science"}, {source: "neuroxidence", target: "oscillations"},
-  {source: "network_topo", target: "network_science"}, {source: "network_topo", target: "spiking"},
-  {source: "gamma", target: "oscillations"}, {source: "gamma", target: "info_proc"},
-  {source: "moral_dilemma", target: "vr_exp"}, {source: "moral_dilemma", target: "info_proc"},
+  // Your publications -> Domains
+  { source: "sorn", target: "recurrent" }, { source: "sorn", target: "self_org" }, { source: "sorn", target: "plasticity" }, { source: "sorn", target: "criticality" },
+  { source: "transfer_entropy", target: "eff_conn" }, { source: "transfer_entropy", target: "info_theory" },
+  { source: "neural_sync", target: "oscillations" }, { source: "neural_sync", target: "recurrent" },
+  { source: "cross_freq", target: "oscillations" }, { source: "cross_freq", target: "network_sc" },
+  { source: "dynamical_relay", target: "recurrent" }, { source: "dynamical_relay", target: "attractor" },
+  { source: "fading_memory", target: "mem" }, { source: "fading_memory", target: "recurrent" },
+  { source: "neuroxidence", target: "oscillations" }, { source: "neuroxidence", target: "network_sc" },
+  { source: "network_topo", target: "network_sc" }, { source: "network_topo", target: "spiking" },
+  { source: "gamma", target: "oscillations" }, { source: "gamma", target: "info_proc" },
+  { source: "moral_dilemma", target: "vr_exp" }, { source: "moral_dilemma", target: "info_proc" },
 
   // Domain interconnections
-  {source: "recurrent", target: "self_org"}, {source: "recurrent", target: "attractor"},
-  {source: "recurrent", target: "mem"}, {source: "recurrent", target: "plasticity"},
-  {source: "spiking", target: "oscillations"}, {source: "spiking", target: "info_proc"},
-  {source: "spiking", target: "plasticity"}, {source: "info_proc", target: "mem"},
-  {source: "info_proc", target: "eff_conn"}, {source: "info_proc", target: "predictive"},
-  {source: "mem", target: "plasticity"}, {source: "oscillations", target: "criticality"},
-  {source: "oscillations", target: "eff_conn"}, {source: "plasticity", target: "self_org"},
-  {source: "eff_conn", target: "info_theory"}, {source: "criticality", target: "attractor"},
+  { source: "recurrent", target: "self_org" }, { source: "recurrent", target: "attractor" }, { source: "recurrent", target: "mem" },
+  { source: "spiking", target: "oscillations" }, { source: "spiking", target: "info_proc" }, { source: "spiking", target: "plasticity" },
+  { source: "info_proc", target: "mem" }, { source: "info_proc", target: "eff_conn" }, { source: "info_proc", target: "predictive" },
+  { source: "mem", target: "plasticity" }, { source: "oscillations", target: "criticality" }, { source: "oscillations", target: "eff_conn" },
+  { source: "plasticity", target: "self_org" }, { source: "criticality", target: "attractor" },
 
   // Method connections
-  {source: "recurrent", target: "computational_model"}, {source: "spiking", target: "computational_model"},
-  {source: "oscillations", target: "eeg_meg"}, {source: "network_topo", target: "network_science"},
-  {source: "info_proc", target: "info_theory"}, {source: "info_proc", target: "state_space"},
-  {source: "moral_dilemma", target: "vr_exp"}, {source: "cross_freq", target: "network_science"},
-  {source: "attractor", target: "state_space"}, {source: "criticality", target: "state_space"},
+  { source: "recurrent", target: "comp_model" }, { source: "spiking", target: "comp_model" },
+  { source: "oscillations", target: "eeg_meg" }, { source: "info_proc", target: "info_theory" },
+  { source: "info_proc", target: "state_space" }, { source: "attractor", target: "state_space" }, { source: "criticality", target: "state_space" },
 
-  // Recent papers to research domains
-  {source: "p_pyaval", target: "criticality"}, {source: "p_pyaval", target: "spiking"},
-  {source: "p_critical", target: "criticality"}, {source: "p_critical", target: "computational_model"},
-  {source: "p_fisher", target: "criticality"}, {source: "p_fisher", target: "info_theory"},
-  {source: "p_gradient", target: "plasticity"}, {source: "p_gradient", target: "spiking"},
-  {source: "p_gradient", target: "recurrent"},
-  {source: "p_reservoir", target: "recurrent"}, {source: "p_reservoir", target: "spiking"},
-  {source: "p_reservoir", target: "computational_model"},
-  {source: "p_prospective", target: "mem"}, {source: "p_prospective", target: "recurrent"},
-  {source: "p_prospective", target: "computational_model"},
-  {source: "p_struct_attract", target: "attractor"}, {source: "p_struct_attract", target: "plasticity"},
-  {source: "p_struct_attract", target: "spiking"},
-  {source: "p_axonal", target: "oscillations"}, {source: "p_axonal", target: "info_proc"},
-  {source: "p_axonal", target: "spiking"},
-  {source: "p_highorder", target: "network_science"}, {source: "p_highorder", target: "eff_conn"},
-  {source: "p_highorder", target: "oscillations"},
-  {source: "p_homeostasis", target: "self_org"}, {source: "p_homeostasis", target: "plasticity"},
-  {source: "p_degeneracy", target: "info_proc"}, {source: "p_degeneracy", target: "attractor"},
-  {source: "p_platonic", target: "info_proc"}, {source: "p_platonic", target: "recurrent"},
-  {source: "p_attn", target: "info_proc"}, {source: "p_attn", target: "recurrent"},
-  {source: "p_cortex", target: "oscillations"}, {source: "p_cortex", target: "network_science"},
-  {source: "p_fisher_kin", target: "info_theory"}, {source: "p_fisher_kin", target: "mem"},
-  {source: "p_meg", target: "eeg_meg"}, {source: "p_meg", target: "oscillations"},
+  // New papers -> Domains
+  { source: "p_motif", target: "criticality" }, { source: "p_motif", target: "spiking" }, { source: "p_motif", target: "network_sc" },
+  { source: "p_temporal", target: "mem" }, { source: "p_temporal", target: "recurrent" },
+  { source: "p_stdp", target: "plasticity" }, { source: "p_stdp", target: "spiking" }, { source: "p_stdp", target: "recurrent" },
+  { source: "p_reservoir", target: "recurrent" }, { source: "p_reservoir", target: "spiking" }, { source: "p_reservoir", target: "comp_model" },
+  { source: "p_struct", target: "attractor" }, { source: "p_struct", target: "plasticity" }, { source: "p_struct", target: "spiking" },
+  { source: "p_critical", target: "criticality" }, { source: "p_critical", target: "comp_model" },
+  { source: "p_fisher", target: "criticality" }, { source: "p_fisher", target: "info_theory" },
+  { source: "p_prospective", target: "mem" }, { source: "p_prospective", target: "recurrent" }, { source: "p_prospective", target: "comp_model" },
+  { source: "p_highorder", target: "network_sc" }, { source: "p_highorder", target: "eff_conn" }, { source: "p_highorder", target: "oscillations" },
+  { source: "p_axonal", target: "oscillations" }, { source: "p_axonal", target: "info_proc" }, { source: "p_axonal", target: "spiking" },
+  { source: "p_pyaval", target: "criticality" }, { source: "p_pyaval", target: "spiking" },
+  { source: "p_homeostasis", target: "self_org" }, { source: "p_homeostasis", target: "plasticity" },
+  { source: "p_meg", target: "eeg_meg" }, { source: "p_meg", target: "oscillations" },
+  { source: "p_cortex", target: "oscillations" }, { source: "p_cortex", target: "network_sc" },
 ];
 
+// --- SETUP ---
 const width = window.innerWidth;
 const height = window.innerHeight;
 
@@ -150,115 +158,185 @@ const colorMap = {
   recent: "#f48fb1"
 };
 
-const svg = d3.select("#mindmap").append("svg").attr("width", width).attr("height", height);
+const svg = d3.select("#mindmap")
+  .attr("width", width)
+  .attr("height", height)
+  .attr("viewBox", [-width/2, -height/2, width, height]);
+
 const g = svg.append("g");
 
-const zoom = d3.zoom().scaleExtent([0.2, 5]).on("zoom", (e) => g.attr("transform", e.transform));
+// Zoom
+const zoom = d3.zoom()
+  .scaleExtent([0.15, 8])
+  .on("zoom", (event) => g.attr("transform", event.transform));
 svg.call(zoom);
 
-// Force simulation
-const simulation = d3.forceSimulation(nodes)
-  .force("link", d3.forceLink(links).id(d => d.id).distance(120))
-  .force("charge", d3.forceManyBody().strength(d => d.group === "center" ? -800 : d.group === "pipa" ? -400 : -250))
-  .force("center", d3.forceCenter(width / 2, height / 2))
-  .force("collide", d3.forceCollide(d => d.r + 15).strength(0.8))
-  .force("x", d3.forceX(width / 2).strength(0.02))
-  .force("y", d3.forceY(height / 2).strength(0.02));
-
-// Links
-const link = g.append("g").selectAll("line")
-  .data(links).join("line")
-  .attr("stroke", l => {
-    const src = nodes.find(n => n.id === (typeof l.source === 'object' ? l.source.id : l.source));
-    if (src && src.group === 'recent') return 'rgba(244,143,177,0.25)';
-    if (src && src.group === 'pipa') return 'rgba(79,195,247,0.2)';
-    return 'rgba(255,255,255,0.08)';
-  })
-  .attr("stroke-width", l => {
-    const src = nodes.find(n => n.id === (typeof l.source === 'object' ? l.source.id : l.source));
-    if (src && src.group === 'recent') return 1.5;
-    return 0.8;
+// Zoom controls
+svg.append("g").attr("class", "zoom-controls").selectAll("rect")
+  .data(["+", "−", "1"]).join("g")
+  .attr("class", "zoom-btn")
+  .attr("transform", (d, i) => `translate(${-30 - i*40}, 0)`)
+  .each(function(d) {
+    const btn = d3.select(this)
+      .attr("y", -18).attr("height", 36).attr("width", 36).attr("rx", 8)
+      .attr("fill", "rgba(15,15,30,0.9)").attr("stroke", "rgba(100,140,255,0.2)").attr("stroke-width", 1);
+    btn.append("text")
+      .attr("x", 0).attr("y", 5).attr("text-anchor", "middle")
+      .attr("fill", "#fff").attr("font-size", 18).attr("font-family", "sans-serif")
+      .text(d);
+    btn.on("click", function() {
+      if (d === "+") svg.transition().duration(300).call(zoom.scaleBy, 1.4);
+      else if (d === "−") svg.transition().duration(300).call(zoom.scaleBy, 0.7);
+      else svg.transition().duration(300).call(zoom.transform, d3.zoomIdentity);
+    });
   });
 
-// Nodes
-const node = g.append("g").selectAll("g")
-  .data(nodes).join("g")
+// --- FORCE LAYOUT ---
+const simulation = d3.forceSimulation(nodes)
+  .force("link", d3.forceLink(links).id(d => d.id).distance(90).strength(0.35))
+  .force("charge", d3.forceManyBody().strength(d => {
+    if (d.group === 'center') return -700;
+    if (d.group === 'pipa') return -400;
+    if (d.group === 'recent') return -200;
+    return -180;
+  }))
+  .force("center", d3.forceCenter(0, 0).strength(0.06))
+  .force("collide", d3.forceCollide(d => (d.r || 12) + 12).strength(0.95))
+  .force("radial", d3.forceRadial(250, 0, 0).strength(0.04))
+  .alphaDecay(0.012)
+  .velocityDecay(0.35);
+
+// --- LINKS ---
+const link = g.append("g")
+  .selectAll("path")
+  .data(links)
+  .join("path")
+  .attr("class", "link")
+  .attr("stroke", d => {
+    const tgt = d.target;
+    if (tgt.group === 'recent') return 'rgba(244,143,177,0.25)';
+    if (tgt.group === 'pipa') return 'rgba(79,195,247,0.18)';
+    return 'rgba(255,255,255,0.06)';
+  })
+  .attr("stroke-width", d => d.target.group === 'recent' ? 1.8 : 1);
+
+// --- NODES ---
+const nodeGroup = g.append("g")
+  .selectAll("g")
+  .data(nodes)
+  .join("g")
+  .attr("cursor", "pointer")
   .attr("class", "node");
 
-node.append("circle")
-  .attr("r", d => d.r || 10)
-  .attr("fill", d => {
-    if (d.group === 'center') return colorMap.center;
-    if (d.newPaper) return colorMap.recent;
-    if (d.group === 'pipa') return colorMap.pipa;
-    if (d.group === 'domain') return colorMap.domain;
-    return colorMap.method;
-  })
-  .attr("stroke", d => d.newPaper ? '#fff' : 'rgba(255,255,255,0.2)')
-  .attr("stroke-width", d => d.newPaper ? 2 : 1)
-  .attr("fill-opacity", d => d.group === 'center' ? 1 : d.newPaper ? 0.9 : 0.7);
+// Outer glow for center
+nodeGroup.filter(d => d.group === "center")
+  .append("circle")
+  .attr("r", d => d.r + 12)
+  .attr("fill", "none")
+  .attr("stroke", colorMap.center)
+  .attr("stroke-width", 2)
+  .attr("opacity", 0.15);
+
+// Main circles
+nodeGroup.append("circle")
+  .attr("class", d => d.group === 'center' ? 'node-circle node-circle-center' : 'node-circle')
+  .attr("r", d => d.r || 12)
+  .attr("fill", d => colorMap[d.group] || '#888')
+  .attr("fill-opacity", d => d.group === 'center' ? 0.95 : d.group === 'recent' ? 0.85 : 0.75)
+  .attr("stroke", d => d.group === 'recent' ? 'rgba(255,255,255,0.5)' : 'rgba(255,255,255,0.15)')
+  .attr("stroke-width", d => d.group === 'recent' ? 2 : 1);
 
 // Labels
-node.append("text")
+nodeGroup.append("text")
+  .attr("class", d => d.group === 'center' ? 'node-label-center' : 'node-label')
+  .attr("x", d => d.r + 8)
+  .attr("y", 4)
   .text(d => d.label.replace(/\n/g, ' '))
-  .attr("x", d => d.r + 6)
-  .attr("y", d => 4)
-  .attr("fill", d => {
-    if (d.group === 'center') return '#ff6b35';
-    if (d.newPaper) return '#f48fb1';
-    if (d.group === 'pipa') return '#4fc3f7';
-    if (d.group === 'domain') return '#81c784';
-    return '#ffb74d';
-  })
-  .attr("font-size", d => d.group === 'center' ? 16 : 11)
+  .attr("font-size", d => d.group === 'center' ? 14 : 10)
   .attr("font-weight", d => d.group === 'center' ? 700 : 400)
   .attr("paint-order", "stroke")
-  .attr("stroke", "rgba(0,0,0,0.8)")
+  .attr("stroke", "rgba(0,0,0,0.85)")
   .attr("stroke-width", 3)
+  .attr("stroke-linejoin", "round")
   .style("pointer-events", "none");
 
-// Tooltip
+// Year labels
+nodeGroup.filter(d => d.group === 'pipa' && d.year)
+  .append("text")
+  .attr("x", d => -d.r - 6)
+  .attr("y", 3)
+  .text(d => `(${d.year})`)
+  .attr("font-size", 8)
+  .attr("fill", "rgba(79,195,247,0.6)")
+  .attr("paint-order", "stroke")
+  .attr("stroke", "rgba(0,0,0,0.8)")
+  .attr("stroke-width", 2)
+  .style("pointer-events", "none");
+
+// Source labels for recent papers
+nodeGroup.filter(d => d.group === 'recent' && d.source)
+  .append("text")
+  .attr("x", d => -d.r - 4)
+  .attr("y", 3)
+  .text(d => d.source)
+  .attr("font-size", 7)
+  .attr("fill", "rgba(244,143,177,0.7)")
+  .attr("paint-order", "stroke")
+  .attr("stroke", "rgba(0,0,0,0.8)")
+  .attr("stroke-width", 2)
+  .style("pointer-events", "none");
+
+// --- TOOLTIP ---
 const tooltip = d3.select("#tooltip");
-node.on("mouseover", function(event, d) {
+nodeGroup.on("mouseover", function(event, d) {
   tooltip.style("display", "block");
-  let text = `<strong>${d.label.replace(/\n/g, ' ')}</strong><br>`;
-  if (d.newPaper) {
-    text += `<span style="color:#f48fb1">📄 New paper from arXiv</span>`;
-  } else if (d.group === 'pipa') {
-    text += `<span style="color:#4fc3f7">🧠 Your research area</span>`;
-  }
-  tooltip.html(text);
+  let html = `<strong>${d.label.replace(/\n/g, ' ')}</strong><br>`;
+  if (d.year) html += `<span style="color:${colorMap.pipa}">${d.year}${d.cites ? ' • ' + d.cites + ' citations' : ''}</span><br>`;
+  if (d.source) html += `<span style="color:#f48fb1">${d.source}</span><br>`;
+  if (d.group === 'pipa') html += `<span style="color:#4fc3f7">🧠 Your work</span>`;
+  if (d.group === 'recent') html += `<span style="color:#f48fb1">📄 New paper from arXiv</span>`;
+  if (d.group === 'domain') html += `<span style="color:#81c784">Research domain</span>`;
+  if (d.group === 'method') html += `<span style="color:#ffb74d">Method</span>`;
+  tooltip.html(html);
 })
 .on("mousemove", function(event) {
   tooltip.style("left", (event.pageX + 15) + "px").style("top", (event.pageY - 10) + "px");
 })
 .on("mouseout", () => tooltip.style("display", "none"));
 
-// Tick
+// --- TICK ---
 simulation.on("tick", () => {
-  link
-    .attr("x1", d => d.source.x)
-    .attr("y1", d => d.source.y)
-    .attr("x2", d => d.target.x)
-    .attr("y2", d => d.target.y);
-  node.attr("transform", d => `translate(${d.x},${d.y})`);
+  link.attr("d", d => {
+    const dx = d.target.x - d.source.x;
+    const dy = d.target.y - d.source.y;
+    const dr = Math.sqrt(dx * dx + dy * dy) * 1.2;
+    return `M${d.source.x},${d.source.y}A${dr},${dr} 0 0,1 ${d.target.x},${d.target.y}`;
+  });
+  nodeGroup.attr("transform", d => `translate(${d.x},${d.y})`);
 });
 
-// Initial zoom to fit
-simulation.on("end", () => {
-  const bounds = node.nodes().reduce((acc, n) => {
+// --- FIT VIEW ---
+setTimeout(() => {
+  const bounds = nodeGroup.nodes().reduce((acc, n) => {
     acc.xMin = Math.min(acc.xMin, n.x - (n.r||10));
     acc.xMax = Math.max(acc.xMax, n.x + (n.r||10));
     acc.yMin = Math.min(acc.yMin, n.y - (n.r||10));
     acc.yMax = Math.max(acc.yMax, n.y + (n.r||10));
     return acc;
   }, {xMin: Infinity, xMax: -Infinity, yMin: Infinity, yMax: -Infinity});
-  const w = bounds.xMax - bounds.xMin;
-  const h = bounds.yMax - bounds.yMin;
-  const scale = 0.85 / Math.max(w / width, h / height);
-  const tx = width / 2 - (bounds.xMin + w / 2) * scale;
-  const ty = height / 2 - (bounds.yMin + h / 2) * scale;
-  svg.transition().duration(800).call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(scale));
+  const w = bounds.xMax - bounds.xMin + 100;
+  const h = bounds.yMax - bounds.yMin + 100;
+  const scale = Math.min(width / w, height / h) * 0.92;
+  const tx = -((bounds.xMin + bounds.xMax) / 2) * scale;
+  const ty = -((bounds.yMin + bounds.yMax) / 2) * scale;
+  svg.transition().duration(600).call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(scale));
+}, 3000);
+
+// Click to toggle labels visibility
+let allLabelsVisible = true;
+svg.on("dblclick", function() {
+  allLabelsVisible = !allLabelsVisible;
+  nodeGroup.select("text").style("opacity", allLabelsVisible ? 1 : 0.15);
 });
 </script>
 </body>
